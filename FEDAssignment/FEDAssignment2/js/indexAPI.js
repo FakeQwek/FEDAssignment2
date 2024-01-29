@@ -7,7 +7,6 @@ const gameCount = [];
 const userTags = [];
 let sum = 0;
 let games = 0;
-const pagination = [""];
 let getUsers = "https://api.twitch.tv/helix/users?id=";
 let getGames = "https://api.twitch.tv/helix/games/top?first=12";
 let getChannel = "https://api.twitch.tv/helix/channels?id=";
@@ -50,7 +49,7 @@ function liveUser(array) {
         .then(data => {
             let index = 0;
             let tagIndex = 0;
-            for (let i = 0; i < array.length; i++) {
+            for (let i = 0; i < 9; i++) {
                 for (let j = 0; j < array.length; j++) {
                     if (data.data[j].id == userIds[i]) {
                         index = j;
@@ -67,21 +66,42 @@ function liveUser(array) {
                                                 <p class="ms-4">` + userTags[tagIndex + 1] +`</p>
                                             </div>
                                         </div>
-                                    <div class="font-24 d-flex flex-fill justify-content-end">` + viewerCount[i] + `</div>
+                                    <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[i] + `</div>
                                 </div>
                             </button>`
                 el.insertAdjacentHTML("beforeend", html)
                 tagIndex += 2;
             }
-            function testFunction() {
-                localStorage.setItem("userid", JSON.stringify("23423"));
-                console.log("dfs");
+
+            for (let i = 9; i < 18; i++) {
+                for (let j = 0; j < array.length; j++) {
+                    if (data.data[j].id == userIds[i]) {
+                        index = j;
+                    }
+                }
+                let el = document.getElementById("live-channels2");
+                let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
+                                <div class="d-flex flex-row my-3 align-items-center">
+                                    <img src="` + data.data[index].profile_image_url + `" class="rounded-circle max-width-100">
+                                        <div class="d-flex flex-column">
+                                            <div class="ms-4 font-32 d-flex">` + userNames[i] + `</div>
+                                            <div class="d-flex flex-row">
+                                                <p class="ms-4">` + userTags[tagIndex] +`</p>
+                                                <p class="ms-4">` + userTags[tagIndex + 1] +`</p>
+                                            </div>
+                                        </div>
+                                    <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[i] + `</div>
+                                </div>
+                            </button>`
+                el.insertAdjacentHTML("beforeend", html)
+                tagIndex += 2;
             }
             
             const el2 = document.getElementsByClassName("user-id");
 
             for (let k = 0; k < array.length; k++) {
-                el2[k].addEventListener("click", (e) => {
+
+                el2[k].addEventListener("click", (el) => {
                     localStorage.setItem(k, JSON.stringify(userIds[k]));
                     location.href = "channel.html";
                 })
@@ -189,7 +209,7 @@ function getClips(array) {
     })
 }
 
-fetch("https://api.twitch.tv/helix/streams?first=9&after=", {
+fetch("https://api.twitch.tv/helix/streams?first=19 ", {
     method: "GET",
     headers: {
         "Client-ID": clientId,
