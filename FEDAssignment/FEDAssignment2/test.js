@@ -167,6 +167,13 @@ function getTopGames() {
     })
 }
 
+//Should go to the channel page
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+}
 
 
 

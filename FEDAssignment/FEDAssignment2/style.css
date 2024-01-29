@@ -78,8 +78,12 @@ html, body {
     background-color: #E5E5E5;
 }
 
-.height-400 {
+.height-500 {
     height: 500px;
+}
+
+.height-1000 {
+    height: 1000px;
 }
 
 .height-30 {
@@ -128,4 +132,12 @@ html, body {
 .carousel-inner .carousel-item-prev {
     display: flex;
 
+}
+
+.padding-top-5per{
+    padding-top: 5%;
+}
+
+.padding-left-5per{
+    padding-left: 5%;
 }
