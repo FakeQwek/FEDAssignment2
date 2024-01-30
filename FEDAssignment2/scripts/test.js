@@ -1,3 +1,11 @@
+
+
+
+  
+
+
+
+
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
 const viewerCount = [];
@@ -13,6 +21,13 @@ let getGames = "https://api.twitch.tv/helix/games/top?first=12";
 let getChannel = "https://api.twitch.tv/helix/channels?id=";
 
 localStorage.clear();
+
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+       }, 850)
+  }
 
 function liveUser(array) {
     for (let i = 0; i < array.length; i++) {
@@ -238,5 +253,8 @@ fetch("https://api.twitch.tv/helix/streams?first=9&after=", {
                 let html = `<h2 id="top-category" class="ms-5 mt-5">` + data.data[0].name + `</h2>`
 
                 el.innerHTML = html;
+                FinishLoading();
+                
             })
         })
+

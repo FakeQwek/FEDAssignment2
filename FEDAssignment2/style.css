@@ -138,6 +138,31 @@ html, body {
     padding-top: 5%;
 }
 
+.padding-top-2per {
+    padding-top: 2%;
+}
+
 .padding-left-5per{
     padding-left: 5%;
 }
+
+.padding-left-15per {
+    padding-left: 15%;
+}
+
+.title {
+    padding-left: 13%;
+    padding-top: 5%;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: #f7f9fb;
+    
+}
+
