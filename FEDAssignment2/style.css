@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +61,9 @@ html, body {
     font-size: 24px;
 }
 
+.font-64 {
+    font-size: 64px;
+}
 
 .font-100 {
     font-size: 100px;
@@ -78,12 +82,8 @@ html, body {
     background-color: #E5E5E5;
 }
 
-.height-500 {
+.height-400 {
     height: 500px;
-}
-
-.height-1000 {
-    height: 1000px;
 }
 
 .height-30 {
@@ -165,4 +165,3 @@ html, body {
     background-color: #f7f9fb;
     
 }
-
