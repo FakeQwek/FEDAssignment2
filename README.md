@@ -8,7 +8,7 @@ The TwitchStats website will provide Twitch viewers and content creators with us
 * As a Twitch viewer, you are able to view clips and find out about the most popular games and channels currently being streamed on twitch
 * As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends
 
-Design plan url: [Design Plan] (https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1)
+Design plan url: [Design Plan](https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1)
 
 ## Features
 
@@ -93,15 +93,15 @@ Bugs and Issues:
 
 ### Content
 
-Most of the data used uses the [Twitch API] (https://dev.twitch.tv/docs/api/)
+Most of the data used uses the [Twitch API](https://dev.twitch.tv/docs/api/)
 
 ### Media
 For the wireframes:
-  * [Twitch Icons]: (https://www.twitch.tv/)
+  * [Twitch Icons](https://www.twitch.tv/)
     
   
 For the website itself: 
-  * [Twitch Icons] - (https://www.twitch.tv/)
+  * [Twitch Icons](https://www.twitch.tv/)
 
 
 
