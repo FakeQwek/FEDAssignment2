@@ -13,6 +13,13 @@ let getChannel = "https://api.twitch.tv/helix/channels?id=";
 
 localStorage.clear();
 
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+       }, 850)
+  }
+
 function liveUser(array) {
     for (let i = 0; i < array.length; i++) {
         getUsers += userIds[i] + "&id=";
@@ -186,6 +193,14 @@ function getTopGames() {
     })
 }
 
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+}
+
+
 
 
 
@@ -249,5 +264,6 @@ fetch("https://api.twitch.tv/helix/streams?first=19 ", {
                 let html = `<h2 id="top-category" class="ms-5 mt-5">` + data.data[0].name + `</h2>`
 
                 el.innerHTML = html;
+                FinishLoading();
             })
         })
