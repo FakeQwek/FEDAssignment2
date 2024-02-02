@@ -20,17 +20,6 @@ function FinishLoading() {
        }, 850)
   }
 
-  function Search() {
-    const searchQuery = document.querySelector(".form-control").value;
-    if (!(searchQuery == "" || searchQuery == " ")) {
-        localStorage.setItem("Search", searchQuery);
-        window.location.href="./search.html";
-    }
-}
-
-
-  
-   
 
 function liveUser(array) {
     for (let i = 0; i < array.length; i++) {
@@ -205,6 +194,14 @@ function getTopGames() {
     })
 }
 
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+}
+
+
 
 
 
@@ -254,7 +251,6 @@ fetch("https://api.twitch.tv/helix/streams?first=19 ", {
         totalViewers(viewerCount);
         channelFollowers(data.data[0].user_id);
         getTopGames();
-        getClips(data.data);
 
         fetch("https://api.twitch.tv/helix/games/top?first=1", {
             method: "GET",
