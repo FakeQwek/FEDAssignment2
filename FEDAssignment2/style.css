@@ -153,6 +153,7 @@ html, body {
 .title {
     padding-left: 13%;
     padding-top: 5%;
+    font-size: 2.5vmax;
 }
 
 .loading {
@@ -161,7 +162,29 @@ html, body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    
     background-color: #f7f9fb;
     
 }
+
+/* Makes search responsive */
+@media only screen and (max-width: 800px) {
+    .col-md-6 {
+      width: 100vw !important;
+      margin-right: 20%;
+    }
+    .title {
+        font-size: 4vmax;
+        padding-left: 8%;
+    }
+    .font-32 {
+        font-size: 25px;
+    }
+    .rounded-circle {
+        max-width: 70px;
+    }
+    .padding-left-15per {
+        padding-left: 12%;
+    }
+}
+
+

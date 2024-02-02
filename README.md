@@ -8,25 +8,27 @@ The TwitchStats website will provide Twitch viewers and content creators with us
 * As a Twitch viewer, you are able to view clips and find out about the most popular games and channels currently being streamed on twitch
 * As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends
 
-Design plan url: https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1
+Design plan url: [Design Plan](https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1)
 
 ## Features
 
 The TwitchStats Website will include the following features:
-1. Sign up/Login page that stores user credentials in a database
-2. Homepage with different categories of channels as well as the top categories of games
+1. Sign up/Login page that stores user login credentials in a database
+2. Homepage that shows general statistics as well different top live channels
 3. Channels page with popular twitch channels
 4. Games page with popular games
 5. Clips page with viewable clips
 6. Live data which is retrieved from the Twitch Api
 7. Navigation bar to switch between pages
+8. Twitch Quiz that fetches from Twitch Api
  
 ### Existing Features
-
-
+- Sign up/Login page that stores user login credentials in a database 50%
+- Homepage that shows general statistics as well different top live channels 80%
+  
 
 ### Features Left to Implement
--
+- The rest
 
   
 
@@ -52,6 +54,9 @@ The TwitchStats Website will include the following features:
  
 - [RestDB](https://restdb.io/)
     - The project uses **RestDB** to store login data from the users
+ 
+- [This](https://github.com/)
+    - The project uses **GitHubB** for version control
  
  
 
@@ -79,6 +84,7 @@ The TwitchStats Website will include the following features:
 
 Responsiveness:
 
+Nada for now
 
 Bugs and Issues: 
 
@@ -87,21 +93,19 @@ Bugs and Issues:
 
 ### Content
 
-
+Most of the data used uses the [Twitch API](https://dev.twitch.tv/docs/api/)
 
 ### Media
 For the wireframes:
-  * Calculator Banner: https://www.casio.com/content/casio/locales/mea/en/products/scientific-calculators/_jcr_content/root/responsivegrid/teaser_copy.casiocoreimg.jpeg/1643768641514/scien-finacal-top-banner-kai.jpeg
+  * [Twitch Icons](https://www.twitch.tv/)
     
   
-  
-  
 For the website itself: 
-  * Shopping Cart Icon - https://cdn-icons-png.flaticon.com/512/1413/1413908.png
+  * [Twitch Icons](https://www.twitch.tv/)
 
 
 
 
 ### Acknowledgements
 
-- Some inspiration for layouts have come from https://www.amazon.com/ and https://www.uniqlo.com/sg/en/
+- Some inspiration for layouts have come from Twitch (https://www.twitch.tv/)

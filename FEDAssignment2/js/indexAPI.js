@@ -20,6 +20,7 @@ function FinishLoading() {
        }, 850)
   }
 
+
 function liveUser(array) {
     for (let i = 0; i < array.length; i++) {
         getUsers += userIds[i] + "&id=";
@@ -53,61 +54,61 @@ function liveUser(array) {
         .then(response => {
             return response.json();
         })
-        .then(data => {
-            let index = 0;
+        .then(json => {
             let tagIndex = 0;
-            for (let i = 0; i < 9; i++) {
+            let index = 0;
+            let position = 0;
+            let el = document.getElementById("live-channels");
+            let el3 = document.getElementById("live-channels2");
+            json.data.forEach(element => {
+                let user = json.data[index];
+                console.log("User is" + user);
+                
                 for (let j = 0; j < array.length; j++) {
-                    if (data.data[j].id == userIds[i]) {
-                        index = j;
+                    if (json.data[j].id == userIds[index]) {
+                        position = j;
+                       
                     }
                 }
-                let el = document.getElementById("live-channels");
+                
+                let tag1 = "";
+                let tag2 = "";
+                if (userTags[tagIndex +1 ] != null) {
+                  tag1 = userTags[tagIndex];
+                  tag2 = userTags[tagIndex];
+                }
+                else if (userTags[tagIndex] != null) {
+                  tag1 = userTags[tagIndex];
+                }
+                
                 let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
                                 <div class="d-flex flex-row my-3 align-items-center">
-                                    <img src="` + data.data[index].profile_image_url + `" class="rounded-circle max-width-100">
+                                    <img src="` + json.data[position].profile_image_url + `" class="rounded-circle max-width-100">
                                         <div class="d-flex flex-column">
-                                            <div class="ms-4 font-32 d-flex">` + userNames[i] + `</div>
+                                            <div class="ms-4 font-32 d-flex">` + userNames[index] + `</div>
                                             <div class="d-flex flex-row">
-                                                <p class="ms-4">` + userTags[tagIndex] +`</p>
-                                                <p class="ms-4">` + userTags[tagIndex + 1] +`</p>
+                                                <p class="ms-4">` + tag1 +`</p>
+                                                <p class="ms-4">` + tag2 +`</p>
                                             </div>
                                         </div>
-                                    <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[i] + `</div>
+                                    <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[index] + `</div>
                                 </div>
                             </button>`
-                el.insertAdjacentHTML("beforeend", html)
+                if (index % 2 == 0) 
+                {
+                  el.insertAdjacentHTML("beforeend", html)
+                }
+                else {
+                  el3.insertAdjacentHTML("beforeend", html)
+                }
+                index++;
                 tagIndex += 2;
-            }
+               
+            })
 
-            for (let i = 9; i < 18; i++) {
-                for (let j = 0; j < array.length; j++) {
-                    if (data.data[j].id == userIds[i]) {
-                        index = j;
-                    }
-                }
-                let el = document.getElementById("live-channels2");
-                let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
-                                <div class="d-flex flex-row my-3 align-items-center">
-                                    <img src="` + data.data[index].profile_image_url + `" class="rounded-circle max-width-100">
-                                        <div class="d-flex flex-column">
-                                            <div class="ms-4 font-32 d-flex">` + userNames[i] + `</div>
-                                            <div class="d-flex flex-row">
-                                                <p class="ms-4">` + userTags[tagIndex] +`</p>
-                                                <p class="ms-4">` + userTags[tagIndex + 1] +`</p>
-                                            </div>
-                                        </div>
-                                    <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[i] + `</div>
-                                </div>
-                            </button>`
-                el.insertAdjacentHTML("beforeend", html)
-                tagIndex += 2;
-            }
-            
             const el2 = document.getElementsByClassName("user-id");
 
             for (let k = 0; k < array.length; k++) {
-
                 el2[k].addEventListener("click", (el) => {
                     localStorage.setItem(k, JSON.stringify(userIds[k]));
                     location.href = "channel.html";
@@ -157,7 +158,7 @@ function getTopGames() {
         return response.json();
     })
     .then(data => {
-        console.log(data);
+        //console.log(data);
         let el = document.getElementById("top-games");
         html = `<div class="carousel-item active">
                     <div class="">
@@ -216,13 +217,15 @@ function getClips(array) {
         return response.json();
     })
     .then(data => {
-        console.log(data.data[0]);
+        //console.log(data.data[0]);
         let el = document.getElementById("top-clips");
         let html = `<iframe src="` + data.data[0].embed_url + `&parent=127.0.0.1:5500/index.html">`
 
         el.insertAdjacentHTML("beforeend", html)
     })
 }
+
+
 
 fetch("https://api.twitch.tv/helix/streams?first=19 ", {
     method: "GET",
