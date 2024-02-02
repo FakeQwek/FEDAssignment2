@@ -8,7 +8,7 @@ The TwitchStats website will provide Twitch viewers and content creators with us
 * As a Twitch viewer, you are able to view clips and find out about the most popular games and channels currently being streamed on twitch
 * As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends
 
-Design plan url: 
+Design plan url: https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1
 
 ## Features
 
