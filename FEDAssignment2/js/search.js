@@ -53,7 +53,7 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
      tag1,tag2 = Tag();
        
      let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
-                  <div class="d-flex flex-row my-3 align-items-center">
+                  <div class="d-flex flex-row my-3 align-items-center channel-result">
                     <img src="` + channel.thumbnail_url + `" class="rounded-circle max-width-100">
                       <div class="d-flex flex-column">
                         <div class="ms-4 font-32 d-flex">` + channel.display_name + `</div>

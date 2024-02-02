@@ -91,6 +91,7 @@ function liveUser(array) {
                 else if (userTags[tagIndex] != null) {
                   tag1 = userTags[tagIndex];
                 }
+                
                 let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
                                 <div class="d-flex flex-row my-3 align-items-center">
                                     <img src="` + json.data[position].profile_image_url + `" class="rounded-circle max-width-100">
