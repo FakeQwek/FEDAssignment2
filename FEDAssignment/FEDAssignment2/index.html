@@ -10,52 +10,49 @@
     
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-white shadow">
-        <div class="container-fluid">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item align-center">
-                    <img src="./images/twitch-logo.png" class="img-fluid width-25">
-                </li>
-                <li class="nav-item align-center">
-                  <a class="nav-link inter-tight-bold ms-4" href="#">Channels</a>
-                </li>
-                <li class="nav-item align-center">
-                  <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
-                </li>
-                <li class="nav-item align-center">
-                  <a class="nav-link inter-tight-bold ms-4" href="#">Clips</a>
-                </li>
-                <li class="nav-item align-center">
-                  <form class="form-inline row" action="/action_page.php">
-                    <div class="col">
-                      <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
-                    </div>
-                    <div class="col">
-                      <button class="btn" type="submit">Search</button>
-                    </div>
-                  </form>
-                </li>
-              </ul>
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item align-center me-4">
-                  <div class="bg-e5e5e5 height-30 rounded font-14 align-center">
-                    <a class="nav-link inter-tight-bold">Sign Up</a>
-                  </div>
-                </li>
-                <li class="nav-item align-center me-4">
-                  <div class="bg-9146ff height-30 rounded font-14 align-center">
-                    <a class="nav-link inter-tight-bold text-white">Log In</a>
-                  </div>
-                </li>
-              </ul>
+  <nav class="navbar navbar-expand-lg bg-white">
+    <div class="container-fluid">
+      <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Nav Bar</h5>
+          <button type="button" class="btn-close btn-close white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-    </nav>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav flex-grow-1 pe-3">
+            <li class="nav-item align-center">
+              <a class="nav-link inter-tight-bold ms-4" href="#">Channels</a>
+            </li>
+            <li class="nav-item align-center">
+              <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
+            </li>
+            <li class="nav-item align-center">
+              <a class="nav-link inter-tight-bold ms-4" href="#">Clips</a>
+            </li>
+            <li class="nav-item align-center">
+              <form class="form-inline row" action="/action_page.php">
+                <div class="col">
+                  <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <div class="col">
+                  <button class="btn" type="submit">Search</button>
+                </div>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 
     <main>
       <div class="container-fluid bg-5c16c5 height-400 align-center shadow">
         <div class="ms-5 inter-tight-bold text-white d-flex flex-column">
           <div class="justify-end">
-            <h1 class="">Welcome to<br><span class="font-100">TwitchStats</span></h1>
+            <h1>Welcome to<br><span class="font-100">TwitchStats</span></h1>
             <img src="./images/twitch-logo.png" class="img-fluid width-100 ms-4">
           </div>
           <div class="d-flex flex-row justify-content-between">

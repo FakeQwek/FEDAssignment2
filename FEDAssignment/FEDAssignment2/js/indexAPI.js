@@ -233,7 +233,6 @@ fetch("https://api.twitch.tv/helix/streams?first=19 ", {
         totalViewers(viewerCount);
         channelFollowers(data.data[0].user_id);
         getTopGames();
-        getClips(data.data);
 
         fetch("https://api.twitch.tv/helix/games/top?first=1", {
             method: "GET",
