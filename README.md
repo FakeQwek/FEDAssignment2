@@ -107,6 +107,8 @@ For the wireframes:
   
 For the website itself: 
   * [Twitch Icons](https://www.twitch.tv/)
+  * [Animated Twitch Icon](https://lottiefiles.com/animations/twitch-icon-zOeSeJObW4)
+  * [Loading Screen](https://lottiefiles.com/animations/loading-purple-G2DwkIDrUS)
 
 
 
