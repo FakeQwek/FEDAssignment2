@@ -13,22 +13,28 @@ Design plan url: [Design Plan](https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl
 ## Features
 
 The TwitchStats Website will include the following features:
-1. Sign up/Login page that stores user login credentials in a database
-2. Homepage that shows general statistics as well different top live channels
+1. Sign up/Login page that stores user login credentials in a database and allows user to register a new account
+2. Homepage that shows general statistics as well the top live channels on Twitch and top categories 
 3. Channels page with popular twitch channels
 4. Games page with popular games
 5. Clips page with viewable clips
-6. Live data which is retrieved from the Twitch Api
-7. Navigation bar to switch between pages
+6. All live data is retrieved from the Twitch Api
+7. Navigation bar to switch between the different pages
 8. Twitch Quiz that fetches from Twitch Api
+9. Animations to capture user attention
  
 ### Existing Features
-- Sign up/Login page that stores user login credentials in a database 50%
-- Homepage that shows general statistics as well different top live channels 80%
+- Sign up/Login page that stores user login credentials in a database 90%
+- Homepage that shows general statistics as well different top live channels 90%
+- Navigation bar to switch between the different pages 95%
+- Twitch Quiz that fetches from Twitch Api 70%
+- Channels page with popular twitch channels 80%
+- Games page with popular games 80%
+- Clips page with viewable clips 80%
   
 
 ### Features Left to Implement
-- The rest
+- Animation to capture user attention
 
   
 
@@ -56,35 +62,34 @@ The TwitchStats Website will include the following features:
     - The project uses **RestDB** to store login data from the users
  
 - [This](https://github.com/)
-    - The project uses **GitHubB** for version control
+    - The project uses **GitHub** for version control
+
+- [Lottie Animation](https://lottiefiles.com/)
+    - The project uses **Lottie Animation** for animations on the site
  
  
 
 ## Testing
 1. Browse homepage:
     1. Go to the Homepage
-    2. Observe popular calculators
-2. Read mission statement:
-    1. Go to about us page
-    2. Read mission statement
-3. Have questions about CASIO calculator:
-    1. Go to FAQ page
-    2. Read questions and answers
-    3. Contact casio staff for further enquiries
-4. Want to find suitable calculator:
-    1. Go to browse page
-    2. Search for calculator model with search bar
-    3. Find calculator model
-    4. Add to cart
-5. Want to finalise purchase
-    1. Go to cart page
-    2. Review order details
-    3. Fill in form information
-    4. Submit order
+    2. Observe twitch statistics and view Top games and channels
+2. Login to TwitchStats:
+    1. Click on login button on top right of the navigation bar
+    2. Enter user credentials
+    3. Login
+3. Sign Up for an account on TwitchStats:
+    1. Click on the signup button on top right of the navigation bar
+    2. Enter user credentials
+    3. Sign up complete
+4. Search for a specific Twitch channel:
+    1. Enter into input box on the navigation bar
+    2. Type in channel to search for on TwitchStats
+    3. Click the search button
+    4. Find the channel 
 
 Responsiveness:
 
-Nada for now
+All pages responsive
 
 Bugs and Issues: 
 
@@ -93,7 +98,7 @@ Bugs and Issues:
 
 ### Content
 
-Most of the data used uses the [Twitch API](https://dev.twitch.tv/docs/api/)
+The data used is fetched using the [Twitch API](https://dev.twitch.tv/docs/api/)
 
 ### Media
 For the wireframes:
@@ -102,6 +107,8 @@ For the wireframes:
   
 For the website itself: 
   * [Twitch Icons](https://www.twitch.tv/)
+  * [Animated Twitch Icon](https://lottiefiles.com/animations/twitch-icon-zOeSeJObW4)
+  * [Loading Screen](https://lottiefiles.com/animations/loading-purple-G2DwkIDrUS)
 
 
 

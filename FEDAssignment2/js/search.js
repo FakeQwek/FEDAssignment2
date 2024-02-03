@@ -6,6 +6,7 @@ function FinishLoading() {
   setTimeout(function(){
       const loader = document.querySelector(".loading");
       loader.remove();
+      
      }, 1250)
   }
 fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100", {
