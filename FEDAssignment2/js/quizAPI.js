@@ -1,7 +1,26 @@
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
+
 localStorage.clear();
+
+function CorrectAnimation() {
+    const correct = document.querySelector("#correct"); 
+    correct.style.display = 'inline';
+    setTimeout(function(){
+    
+        correct.style.display='none';
+   }, 3700)
+}
+
+function WrongAnimation() {
+    const wrong = document.querySelector("#wrong");
+    wrong.style.display = 'inline';
+    setTimeout(function(){
+   
+        wrong.style.display='none';
+   }, 2800)
+}
 
 fetch("https://api.twitch.tv/helix/streams?first=4", {
     method: "GET",
@@ -31,10 +50,14 @@ fetch("https://api.twitch.tv/helix/streams?first=4", {
 
         const correct = el => {
             localStorage.setItem("score", 1);
+            console.log("correct!")
+            CorrectAnimation();
             qn2();
         }
 
         const wrong = el => {
+            console.log("wrong")
+            WrongAnimation();
             qn2();
         }
         

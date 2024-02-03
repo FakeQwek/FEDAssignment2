@@ -162,9 +162,13 @@ html, body {
 
 /* design related classes */
 
+.display-none {
+    display: none;
+}
 
-
-
+.background-white {
+    background-color: #f7f9fb;
+}
 
 /* specific element classes */
 
@@ -180,9 +184,27 @@ html, body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #f7f9fb;
+   
     
 }
+
+.animated-twitch {
+    width: 15%;
+    visibility: hidden;
+    padding-left: 0.5%;
+    rotate: 1 1 90 2deg;
+}
+
+.animated-quiz {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 50vh;
+}
+
+
 
 
 /* RESPONSIVENESS */

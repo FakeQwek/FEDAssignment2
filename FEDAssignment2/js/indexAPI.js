@@ -17,6 +17,8 @@ function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
         loader.remove();
+        const icon = document.querySelector(".animated-twitch");
+        icon.style.visibility='visible';
        }, 850)
   }
 
