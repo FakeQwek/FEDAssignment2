@@ -8,25 +8,33 @@ The TwitchStats website will provide Twitch viewers and content creators with us
 * As a Twitch viewer, you are able to view clips and find out about the most popular games and channels currently being streamed on twitch
 * As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends
 
-Design plan url: https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1
+Design plan url: [Design Plan](https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1)
 
 ## Features
 
 The TwitchStats Website will include the following features:
-1. Sign up/Login page that stores user credentials in a database
-2. Homepage with different categories of channels as well as the top categories of games
+1. Sign up/Login page that stores user login credentials in a database and allows user to register a new account
+2. Homepage that shows general statistics as well the top live channels on Twitch and top categories 
 3. Channels page with popular twitch channels
 4. Games page with popular games
 5. Clips page with viewable clips
-6. Live data which is retrieved from the Twitch Api
-7. Navigation bar to switch between pages
+6. All live data is retrieved from the Twitch Api
+7. Navigation bar to switch between the different pages
+8. Twitch Quiz that fetches from Twitch Api
+9. Animations to capture user attention
  
 ### Existing Features
-
-
+- Sign up/Login page that stores user login credentials in a database 90%
+- Homepage that shows general statistics as well different top live channels 90%
+- Navigation bar to switch between the different pages 95%
+- Twitch Quiz that fetches from Twitch Api 70%
+- Channels page with popular twitch channels 80%
+- Games page with popular games 80%
+- Clips page with viewable clips 80%
+  
 
 ### Features Left to Implement
--
+- Animation to capture user attention
 
   
 
@@ -53,32 +61,35 @@ The TwitchStats Website will include the following features:
 - [RestDB](https://restdb.io/)
     - The project uses **RestDB** to store login data from the users
  
+- [This](https://github.com/)
+    - The project uses **GitHub** for version control
+
+- [Lottie Animation](https://lottiefiles.com/)
+    - The project uses **Lottie Animation** for animations on the site
+ 
  
 
 ## Testing
 1. Browse homepage:
     1. Go to the Homepage
-    2. Observe popular calculators
-2. Read mission statement:
-    1. Go to about us page
-    2. Read mission statement
-3. Have questions about CASIO calculator:
-    1. Go to FAQ page
-    2. Read questions and answers
-    3. Contact casio staff for further enquiries
-4. Want to find suitable calculator:
-    1. Go to browse page
-    2. Search for calculator model with search bar
-    3. Find calculator model
-    4. Add to cart
-5. Want to finalise purchase
-    1. Go to cart page
-    2. Review order details
-    3. Fill in form information
-    4. Submit order
+    2. Observe twitch statistics and view Top games and channels
+2. Login to TwitchStats:
+    1. Click on login button on top right of the navigation bar
+    2. Enter user credentials
+    3. Login
+3. Sign Up for an account on TwitchStats:
+    1. Click on the signup button on top right of the navigation bar
+    2. Enter user credentials
+    3. Sign up complete
+4. Search for a specific Twitch channel:
+    1. Enter into input box on the navigation bar
+    2. Type in channel to search for on TwitchStats
+    3. Click the search button
+    4. Find the channel 
 
 Responsiveness:
 
+All pages responsive
 
 Bugs and Issues: 
 
@@ -87,21 +98,21 @@ Bugs and Issues:
 
 ### Content
 
-
+The data used is fetched using the [Twitch API](https://dev.twitch.tv/docs/api/)
 
 ### Media
 For the wireframes:
-  * Calculator Banner: https://www.casio.com/content/casio/locales/mea/en/products/scientific-calculators/_jcr_content/root/responsivegrid/teaser_copy.casiocoreimg.jpeg/1643768641514/scien-finacal-top-banner-kai.jpeg
+  * [Twitch Icons](https://www.twitch.tv/)
     
   
-  
-  
 For the website itself: 
-  * Shopping Cart Icon - https://cdn-icons-png.flaticon.com/512/1413/1413908.png
+  * [Twitch Icons](https://www.twitch.tv/)
+  * [Animated Twitch Icon](https://lottiefiles.com/animations/twitch-icon-zOeSeJObW4)
+  * [Loading Screen](https://lottiefiles.com/animations/loading-purple-G2DwkIDrUS)
 
 
 
 
 ### Acknowledgements
 
-- Some inspiration for layouts have come from https://www.amazon.com/ and https://www.uniqlo.com/sg/en/
+- Some inspiration for layouts have come from Twitch (https://www.twitch.tv/)

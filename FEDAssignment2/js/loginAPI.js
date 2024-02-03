@@ -16,6 +16,7 @@ function submit() {
     .then(response => {
         return response.json();
     })
+
     .then(data => {
         for (let i = 0; i < data.length; i++) {
             if (data[i].username == username && data[i].password == password) {
@@ -26,6 +27,7 @@ function submit() {
             }
         }
     })
+
 }
 
 el.addEventListener("click", submit);
