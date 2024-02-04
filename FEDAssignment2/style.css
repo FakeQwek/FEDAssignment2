@@ -112,6 +112,11 @@ html, body {
     max-height: 60px;
 }
 
+.max-width-100p {
+    max-width: 100%;
+}
+
+
 /* classes to set positions */
 
 .align-center {
@@ -204,12 +209,67 @@ html, body {
     height: 50vh;
 }
 
+.sm-w25-100 {
+    width: 25%;
+}
+
+.s-w75-100 {
+    width: 75%;
+}
+
 
 
 
 /* RESPONSIVENESS */
 
 /* Makes search page responsive */
+@media only screen and (max-width: 768px) {
+    .remove {
+        display: none;
+    }
+
+    .font-100 {
+        font-size: 50px;
+    }
+
+    .font-32 {
+        font-size: 20px;
+    }
+    
+    .height-400 {
+        height: 200px;
+    }
+
+    .sm-font-12 {
+        font-size: 12px;
+    }
+
+    .sm-font-16 {
+        font-size: 16px;
+    }
+
+    .sm-font-28 {
+        font-size: 28px;
+    }
+
+    .sm-margin-s48 {
+        margin-left: 16px;
+    }
+
+    .sm-column {
+        flex-direction: column;
+    }
+
+    .sm-w25-100 {
+        width: 100%;
+    }
+
+    .sm-w75-100 {
+        width: 100%;
+    }
+    
+}
+
 @media only screen and (max-width: 800px) {
     .col-md-6 {
       width: 100vw !important;
