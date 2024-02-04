@@ -87,12 +87,13 @@ The TwitchStats Website will include the following features:
     3. Click the search button
     4. Find the channel 
 
-Responsiveness:
+## Responsiveness:
 
 All pages responsive
 
-Bugs and Issues: 
+## Bugs and Issues: 
 
+Channels seem to not link to their buttons correctly
 
 ## Credits
 
