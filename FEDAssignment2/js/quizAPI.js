@@ -619,6 +619,67 @@ function qn8() {
     })
 }
 
+function qn9() {
+    fetch("https://api.twitch.tv/helix/streams?first=1", {
+        method: "GET",
+        headers: {
+        "Client-ID": clientId,
+        "Authorization": "Bearer " + oAuth
+        }
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
+                        <h1 class="font-100 text-center px-2 w-100">What year was ` + data.data[0].user_name + ` created at</h1>
+                        <div class="d-flex justify-content-center my-3">
+                            <input id="answer" class="w-75" type="text">
+                        </div>
+                        <button id="submit" class="btn text-white border-0">Submit</button>
+                    </div>`
+
+
+        let pageEl = document.getElementById("page");
+        pageEl.innerHTML = page;
+        fetch("https://api.twitch.tv/helix/users?id=" + data.data[0].user_id, {
+            method: "GET",
+            headers: {
+            "Client-ID": clientId,
+            "Authorization": "Bearer " + oAuth
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let date = Number(data.data[0].created_at.slice(0,4));
+
+            let submit = document.getElementById("submit");
+            submit.addEventListener("click", func => {
+                let answer = document.getElementById("answer");
+                if (answer.value == date) {
+                    correct();
+                }
+                else {
+                    wrong();
+                }
+            })
+
+            const correct = el => {
+                let currScore = localStorage.getItem("score")
+
+                localStorage.setItem("score", ++currScore);
+                qn10();
+            }
+
+            const wrong = el => {
+                qn10();
+            }
+        })
+    })
+}
+
 function finish() {
     
 }
