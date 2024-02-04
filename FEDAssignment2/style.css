@@ -192,7 +192,7 @@ html, body {
     width: 15%;
     visibility: hidden;
     padding-left: 0.5%;
-    rotate: 1 1 90 2deg;
+    
 }
 
 .animated-quiz {
@@ -204,7 +204,9 @@ html, body {
     height: 50vh;
 }
 
-
+.animated-channels {
+    
+}
 
 
 /* RESPONSIVENESS */

@@ -1,6 +1,14 @@
-
+const userIds = [];
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
+
+function Search() {
+  const searchQuery = document.querySelector(".form-control").value;
+  localStorage.setItem("Search", searchQuery);
+  window.location.href="./search.html";
+  return false;
+}
+
 
 function FinishLoading() {
   setTimeout(function(){
@@ -9,6 +17,11 @@ function FinishLoading() {
       
      }, 1250)
   }
+
+localStorage.clear();
+
+
+
 fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100", {
     method: "GET",
     headers: {
@@ -20,7 +33,7 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     return response.json();
 })
 .then(json => {
-
+   
    //Prints whole file : console.log(json.data);
    //Prints first channel's broadcasters language : console.log(json.data[0].broadcaster_language);
    let index = 0;
@@ -32,9 +45,26 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
      let tag1 = "";
      let tag2 = "";
      
+     let usersId = json.data[index].id;
+     console.log(usersId);
+     fetch("https://api.twitch.tv/helix/streams?user_id=" + usersId +"&first=100", {
+      method: "GET",
+      headers: {
+      "Client-ID": clientId,
+      "Authorization": "Bearer " + oAuth
+      }
+     })
+     .then(response => {
+      return response.json();
+     })
+     .then(json => {
+      userIds.push(usersId);
+      console.log("pushed: " + usersId);
+    })
+    
      function Tag(){
       try {
-        console.log(channel.tags.length)
+        /*console.log(channel.tags.length)*/
         if (channel.tags.length > 1) {
             tag1 = channel.tags[0]
             tag2 = channel.tags[1]
@@ -68,33 +98,37 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
                     <div class="font-24 d-flex flex-fill justify-content-end">` + "" + `</div>
                   </div>
                  </button>`
-                if (index % 2 == 1) 
+                if (index % 2 == 0) 
                 {
+                  //will be placed on the left even numbers
                   column.insertAdjacentHTML("beforeend", html)
                 }
                 else 
                 {
+                  //will be placed on the right not even numbers
                   column2.insertAdjacentHTML("beforeend", html)
                 }
      index++;
    })
+   const channelButton = document.getElementsByClassName("user-id");
    
-
-   
+   for (let k = 0; k < channelButton.length; k++) {
+    console.log("setting button listeners: " + k + " " + userIds[k]);
+    channelButton[k].addEventListener("click", (el) => {
+      localStorage.setItem(k, JSON.stringify(userIds[k]));
+      location.href = "channel.html";
+       
+    })
+   }
    FinishLoading();
+ })
+  
           
-  })
     
 
 
 
 
 
-        function Search() {
-            const searchQuery = document.querySelector(".form-control").value;
-            localStorage.setItem("Search", searchQuery);
-            window.location.href="./search.html";
-            return false;
-        }
         
 

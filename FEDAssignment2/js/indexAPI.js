@@ -115,6 +115,7 @@ function liveUser(array) {
                     localStorage.setItem(k, JSON.stringify(userIds[k]));
                     location.href = "channel.html";
                 })
+                
             }
         })
 }
