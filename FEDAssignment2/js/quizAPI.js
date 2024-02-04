@@ -438,6 +438,59 @@ function qn5() {
     })
 }
 
+function qn6() {
+    fetch("https://api.twitch.tv/helix/streams?first=1", {
+        method: "GET",
+        headers: {
+        "Client-ID": clientId,
+        "Authorization": "Bearer " + oAuth
+        }
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(data => {
+        let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
+                        <h1 class="font-100 text-center px-2 w-100">` + data.data[0].user_name + ` streams in english</h1>
+                        <div class="my-3 d-flex w-75 justify-content-around sm-column">
+                            <button id="trueButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">True</span></button>
+                            <button id="falseButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">False</span></button>
+                        </div>
+                    </div>`
+
+        let language = data.data[0].language;
+
+        let pageEl = document.getElementById("page");
+        pageEl.innerHTML = page;
+        let trueButton = document.getElementById("trueButton");
+        let falseButton = document.getElementById("falseButton");
+
+        trueButton.addEventListener("click", func => {
+            if (language == "en") {
+                let currScore = localStorage.getItem("score")
+
+                localStorage.setItem("score", ++currScore);
+                qn7();
+            }
+            else {
+                qn7();
+            }
+        })
+
+        falseButton.addEventListener("click", func => {
+            if (language == "en") {
+                qn7();
+            }
+            else {
+                let currScore = localStorage.getItem("score")
+
+                localStorage.setItem("score", ++currScore);
+                qn7();
+            }
+        })
+    })
+}
+
 function finish() {
     
 }
