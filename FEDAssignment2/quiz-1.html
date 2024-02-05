@@ -9,10 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
 </head>
+
 <body>
+  <!-- creating the lottie animations that will be used for this page -->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
   <dotlottie-player id = "correct" class="animated-quiz display-none" src="https://lottie.host/78966431-ad27-42b8-9a32-f78f2ba74152/Aq3Br8Bckb.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
-  <dotlottie-player id = "wrong" class="animated-quiz display-none" src="https://lottie.host/00454303-9096-4181-91a2-da57fa40246b/LwnFSaHmio.json" background="transparent" speed="1" loop autoplay></dotlottie-player>  
+  <dotlottie-player id = "wrong" class="animated-quiz display-none" src="https://lottie.host/00454303-9096-4181-91a2-da57fa40246b/LwnFSaHmio.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+
+  <!-- navbar  -->
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
       <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
@@ -51,7 +55,10 @@
     </div>
   </nav>
 
+  <!-- main -->
   <main id="page" class="inter-tight-bold bg-9146ff">
+
+    <!-- page with the questions and inputs -->
     <div class="d-flex justify-content-center align-items-center vh-200 flex-column">
         <h1 class="font-100 px-5 my-5 text-center">Current top live streamer?</h1>
         <div class="row w-75 mt-3">
@@ -74,6 +81,7 @@
     </div>
   </main>
 
+  <!-- footer -->
   <footer>
     <div class="height-400"></div>
   </footer>

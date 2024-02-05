@@ -26,6 +26,8 @@ html, body {
 
 
 /* classes to set fonts */
+
+/* classes to set font family */
 .inter-tight {
     font-family: "Inter-Tight";
 }
@@ -34,6 +36,7 @@ html, body {
     font-family: "Inter-Tight-Bold";
 }
 
+/* classes to set font size */
 .font-14 {
     font-size: 14px;
 }
@@ -116,6 +119,14 @@ html, body {
     max-width: 100%;
 }
 
+.sm-w25-100 {
+    width: 25%;
+}
+
+.s-w75-100 {
+    width: 75%;
+}
+
 
 /* classes to set positions */
 
@@ -142,6 +153,7 @@ html, body {
     margin-left: 320px;
 }
 
+/* setting carousel class display to flex */
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
 .carousel-inner .carousel-item-prev {
@@ -149,6 +161,7 @@ html, body {
 
 }
 
+/* classes to set padding */
 .padding-top-5per{
     padding-top: 5%;
 }
@@ -165,12 +178,13 @@ html, body {
     padding-left: 15%;
 }
 
-/* design related classes */
+/* class to set display to none */
 
 .display-none {
     display: none;
 }
 
+/* classes to set background colours */
 .background-white {
     background-color: #f7f9fb;
 }
@@ -209,20 +223,11 @@ html, body {
     height: 50vh;
 }
 
-.sm-w25-100 {
-    width: 25%;
-}
-
-.s-w75-100 {
-    width: 75%;
-}
-
 
 
 
 /* RESPONSIVENESS */
 
-/* Makes search page responsive */
 @media only screen and (max-width: 768px) {
     .remove {
         display: none;
@@ -270,6 +275,7 @@ html, body {
     
 }
 
+/* Makes search page responsive */
 @media only screen and (max-width: 800px) {
     .col-md-6 {
       width: 100vw !important;

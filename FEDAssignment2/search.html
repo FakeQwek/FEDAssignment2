@@ -10,8 +10,12 @@
     
 </head>
 <body>
+
+  <!-- lottie animation for the loading animation -->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-  <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="transparent" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
+  <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="transparent" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>4
+
+  <!-- navbar -->
   <nav class="navbar navbar-expand-lg bg-white shadow">
     <div class="container-fluid">
       <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
@@ -50,17 +54,20 @@
     </div>
   </nav>
    
+  <!-- main -->
     <main>
+
+      <!-- title of the page -->
       <h2 class = "title">Channel Results</h2>
+
+      <!-- container for the searched channels that are called from the API -->
       <div class = "d-flex align-items-start justify-content-around flex-row padding-left-15per padding-top-2per row">
         <div id="channels-results" class="col-md-6"></div>
         <div id="channels-results2" class="col-md-6"></div>
       </div>
-      
-      
-          
-      
     </main>
+
+    <!-- footer -->
     <footer>
       <div class="height-400"></div>
     </footer>
