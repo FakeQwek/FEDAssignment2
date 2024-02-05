@@ -87,7 +87,7 @@ function liveUser(array) {
                 
                 let tag1 = "";
                 let tag2 = "";
-                if (userTags[tagIndex +1 ] != null) {
+                if (userTags[tagIndex + 1] != null) {
                   tag1 = userTags[tagIndex];
                   tag2 = userTags[tagIndex];
                 }
@@ -242,7 +242,7 @@ function getClips(array) {
 
 
 
-fetch("https://api.twitch.tv/helix/streams?first=19 ", {
+fetch("https://api.twitch.tv/helix/streams?first=18 ", {
     method: "GET",
     headers: {
         "Client-ID": clientId,
