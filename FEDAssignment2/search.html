@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +11,13 @@
     
 </head>
 <body>
-
-  <!-- lottie animation for the loading animation -->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-  <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="transparent" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>4
-
-  <!-- navbar -->
+  <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="white" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
   <nav class="navbar navbar-expand-lg bg-white shadow">
     <div class="container-fluid">
-      <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+      <a href="./index.html" >
+        <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+      </a>
       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -30,18 +29,19 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav flex-grow-1 pe-3">
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Channels</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
             </li>
+          
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Clips</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./quiz.html">Twitch Quiz</a>
             </li>
             <li class="nav-item align-center">
               <form class="form-inline row" >
                 <div class="col">
-                  <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-control ms-4" type="search" placeholder="Find Channels" aria-label="Search">
                 </div>
                 <div class="col">
                   <button class="btn" type="button" onclick = "Search()" >Search</button>
@@ -49,25 +49,34 @@
               </form>
             </li>
           </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item align-center me-4">
+              <div class="bg-e5e5e5 height-30 rounded font-14 align-center">
+                <a class="nav-link inter-tight-bold" href="./signup.html">Sign Up</a>
+              </div>
+            </li>
+            <li class="nav-item align-center me-4">
+              <div class="bg-9146ff height-30 rounded font-14 align-center">
+                <a class="nav-link inter-tight-bold text-white" href="./login.html">Log In</a>
+              </div>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </nav>
    
-  <!-- main -->
     <main>
-
-      <!-- title of the page -->
-      <h2 class = "title">Channel Results</h2>
-
-      <!-- container for the searched channels that are called from the API -->
-      <div class = "d-flex align-items-start justify-content-around flex-row padding-left-15per padding-top-2per row">
+      <h2 class = "title">Live Channel Results</h2>
+      <div class = "d-flex align-items-start flex-row padding-left-5per padding-right-5per justify-content-between padding-top-2per row">
         <div id="channels-results" class="col-md-6"></div>
         <div id="channels-results2" class="col-md-6"></div>
       </div>
+      
+      
+          
+      
     </main>
-
-    <!-- footer -->
     <footer>
       <div class="height-400"></div>
     </footer>

@@ -5,23 +5,18 @@ const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 localStorage.clear();
 localStorage.setItem("score", 0);
 
-function CorrectAnimation() {
-    const correct = document.querySelector("#correct"); 
-    correct.style.display = 'inline';
+function TransitionAnimation() {
+    const animation = document.querySelector("#transition"); 
+    const animationout = document.querySelector("#transition-out");
+    animation.style.display = 'inline';
+
     setTimeout(function(){
-    
-        correct.style.display='none';
-   }, 3700)
+        animation.style.display='none';
+   }, 2000)
+
+  
 }
 
-function WrongAnimation() {
-    const wrong = document.querySelector("#wrong");
-    wrong.style.display = 'inline';
-    setTimeout(function(){
-   
-        wrong.style.display='none';
-   }, 2800)
-}
 
 fetch("https://api.twitch.tv/helix/streams?first=5", {
     method: "GET",
@@ -50,14 +45,16 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
         let num = random[Math.floor(Math.random() * 3)];
 
         const correct = el => {
-            let currScore = localStorage.getItem("score")
 
+            let currScore = localStorage.getItem("score")
             localStorage.setItem("score", ++currScore);
-            qn2();
+            TransitionAnimation();
+            setTimeout(qn2(), 4000);
         }
 
         const wrong = el => {
-            qn2();
+            TransitionAnimation();
+            setTimeout(qn2(), 4000);
         }
         
         for (let i = 1; i < 5; i++) {
