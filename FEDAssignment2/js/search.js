@@ -24,7 +24,7 @@ function FinishLoading() {
 
 
 
-fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100", {
+fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100" +"&live_only=true", {
     method: "GET",
     headers: {
     "Client-ID": clientId,

@@ -18,7 +18,19 @@ function FinishLoading() {
         const loader = document.querySelector(".loading");
         loader.remove();
         const icon = document.querySelector(".animated-twitch");
+        const animatedIcons1 = document.getElementsByClassName("animated-icons");
+        const animatedIcons2 = document.getElementsByClassName("animated-icons2");
+        const animatedIcons3 = document.getElementsByClassName("animated-icons3");
         icon.style.visibility='visible';
+        for (let i = 0; i < animatedIcons2.length; i++) {
+            animatedIcons2[i].style.visibility = 'visible';
+        }
+        for (let i = 0; i < animatedIcons3.length; i++) {
+            animatedIcons3[i].style.visibility = 'visible';
+        }
+        animatedIcons1[0].style.visibility = 'visible';
+       
+     
        }, 850)
   }
 
@@ -125,7 +137,7 @@ function totalViewers(viewerCount) {
         sum += viewerCount[i];
     }
     let el = document.getElementById("viewer-count-100");
-    let html = `<h2 id="viewer-count-100" class="mt-5">` + sum + `</h2>`
+    let html = `<h2 id="viewer-count-100" class="mt-5 stats">` + sum + `</h2>`
 
     el.innerHTML = html;
 }
@@ -143,7 +155,7 @@ function channelFollowers(broadcaster_id) {
     })
     .then(data => {
         let el = document.getElementById("no1-follower-count");
-        let html = `<h2 id="no1-follower-count" class="ms-5 mt-5">` + data.total + `</h2>`
+        let html = `<h2 id="no1-follower-count" class="ms-5 mt-5 stats">` + data.total + `</h2>`
 
         el.innerHTML = html;
     })
@@ -267,7 +279,7 @@ fetch("https://api.twitch.tv/helix/streams?first=19 ", {
             })
             .then(data => {
                 let el = document.getElementById("top-category");
-                let html = `<h2 id="top-category" class="ms-5 mt-5">` + data.data[0].name + `</h2>`
+                let html = `<h2 id="top-category" class="ms-5 mt-5 stats">` + data.data[0].name + `</h2>`
 
                 el.innerHTML = html;
                 FinishLoading();

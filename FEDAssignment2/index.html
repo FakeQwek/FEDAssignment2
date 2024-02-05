@@ -15,7 +15,9 @@
   
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
-      <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+      <a href="./index.html" >
+        <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+      </a>
       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,23 +29,36 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav flex-grow-1 pe-3">
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Channels</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
             </li>
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Clips</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./quiz.html">Twitch Quiz</a>
             </li>
+          
             <li class="nav-item align-center">
               <form class="form-inline row" >
                 <div class="col">
-                  <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
+                  <input class="form-control ms-4" type="search" placeholder="Find Channels" aria-label="Search">
                 </div>
                 <div class="col">
-                  <button class="btn" type="button" onclick = "Search()">Search</button>
+                  <button class="btn ms-1 inter-tight-bold" type="button" onclick = "Search()">Search</button>
                 </div>
               </form>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item align-center me-4">
+              <div class="bg-e5e5e5 height-30 rounded font-14 align-center">
+                <a class="nav-link inter-tight-bold" href="./signup.html">Sign Up</a>
+              </div>
+            </li>
+            <li class="nav-item align-center me-4">
+              <div class="bg-9146ff height-30 rounded font-14 align-center">
+                <a class="nav-link inter-tight-bold text-white" href="./login.html">Log In</a>
+              </div>
             </li>
           </ul>
         </div>
@@ -85,7 +100,7 @@
               <h1 class="text-white">Games</h1>
             </div>
             <div class="col">
-              <img src="./images/twitch-controller.png" class="height-100">
+              <img src="./images/twitch-controller.png" class="height-100 animated-icons">
             </div>
           </div>
           <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
@@ -93,7 +108,7 @@
               <h1 class="text-white">IRL</h1>
             </div>
             <div class="col">
-              <img src="./images/twitch-mic.png" class="height-100">
+              <img src="./images/twitch-mic.png" class="height-100 animated-icons2">
             </div>
           </div>
           <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
@@ -101,7 +116,7 @@
               <h1 class="text-white">Music</h1>
             </div>
             <div class="col">
-              <img src="./images/twtich-headset.png" class="height-100">
+              <img src="./images/twtich-headset.png" class="height-100 animated-icons3">
             </div>
           </div>
           <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
@@ -109,15 +124,15 @@
               <h1 class="text-white">Esports</h1>
             </div>
             <div class="col">
-              <img src="./images/twtich-trophy.png" class="height-100">
+              <img src="./images/twtich-trophy.png" class="height-100 animated-icons2">
             </div>
           </div>
-          <div class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60">
+          <div class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60 ">
             <div class="container-fluid">
               <h1 class="text-white">Art</h1>
             </div>
             <div class="col">
-              <img src="./images/twitch-art.png" class="height-100">
+              <img src="./images/twitch-art.png" class="height-100 animated-icons3">
             </div>
           </div>
           
