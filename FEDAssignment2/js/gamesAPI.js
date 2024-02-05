@@ -3,6 +3,25 @@ const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["Teamfight Tactics", "Legaue of Legends", "Palworld", "VALORANT", "Counter-Strike", "Fortnite", "Grand Theft Auto V", "Apex Legends"]
 
+
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+  
+  function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1250)
+    }
+  
+
+
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",
     headers: {
@@ -51,3 +70,4 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
         }
     })
 })
+FinishLoading();
