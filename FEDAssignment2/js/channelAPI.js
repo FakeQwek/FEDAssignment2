@@ -1,10 +1,28 @@
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
-for (let i = 0; i < 10; i++) {
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+}
+  
+  
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1350)
+}
+
+
+for (let i = 0; i < 100; i++) {
+   
     if (JSON.parse(localStorage.getItem(i)) != null) {
         userId = JSON.parse(localStorage.getItem(i));
-
+        console.log(userId);
         fetch("https://api.twitch.tv/helix/users?id=" + userId, {
             method: "GET",
             headers: {
@@ -102,5 +120,6 @@ for (let i = 0; i < 10; i++) {
         })
     }
 }
+FinishLoading();
 
 console.log(userId);

@@ -11,14 +11,14 @@
 </head>
 <body>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-  <dotlottie-player id = "correct" class="animated-quiz display-none" src="https://lottie.host/78966431-ad27-42b8-9a32-f78f2ba74152/Aq3Br8Bckb.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
-  <dotlottie-player id = "wrong" class="animated-quiz display-none" src="https://lottie.host/00454303-9096-4181-91a2-da57fa40246b/LwnFSaHmio.json" background="transparent" speed="1" loop autoplay></dotlottie-player>  
+  <dotlottie-player id ="transition" class="animated-quiz display-none"src="https://lottie.host/4ca29905-98ee-422f-99f6-b7a869611c8d/WQl0d7YkpR.json" background="transparent" speed="0.2" direction = "-1" autoplay></dotlottie-player>
+   
   <nav class="navbar navbar-expand-lg bg-white shadow">
         <div class="container-fluid">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item align-center">
-                    <img src="./images/twitch-logo.png" class="img-fluid width-25">
-                </li>
+              <a href="./index.html" >
+                <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+              </a>
                 <li class="nav-item align-center">
                   <a class="nav-link inter-tight-bold ms-4" href="#">Channels</a>
                 </li>
@@ -42,12 +42,12 @@
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item align-center me-4">
                   <div class="bg-e5e5e5 height-30 rounded font-14 align-center">
-                    <a class="nav-link inter-tight-bold">Sign Up</a>
+                    <a class="nav-link inter-tight-bold" href="./signup.html">Sign Up</a>
                   </div>
                 </li>
                 <li class="nav-item align-center me-4">
                   <div class="bg-9146ff height-30 rounded font-14 align-center">
-                    <a class="nav-link inter-tight-bold text-white">Log In</a>
+                    <a class="nav-link inter-tight-bold text-white" href="./login.html">Log In</a>
                   </div>
                 </li>
               </ul>

@@ -152,12 +152,24 @@ html, body {
     padding-top: 2%;
 }
 
+.padding-left-2per{
+    padding-left: 2%;
+}
+
+.padding-right-5per{
+    padding-right: 5%;
+}
+
 .padding-left-5per{
     padding-left: 5%;
 }
 
 .padding-left-15per {
-    padding-left: 15%;
+    padding-left: 15% !important;
+}
+
+.margin-left-15per {
+    margin-left: 15% !important;
 }
 
 /* design related classes */
@@ -170,10 +182,12 @@ html, body {
     background-color: #f7f9fb;
 }
 
+
+
 /* specific element classes */
 
 .title {
-    padding-left: 13%;
+    padding-left: 5%;
     padding-top: 5%;
     font-size: 2.5vmax;
 }
@@ -188,11 +202,28 @@ html, body {
     
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+ 
+
+/* animation classes */
+
+
+
+.stats:hover {
+    color: lightgray;
+}
+
+button:hover {
+    background-color: lightgray !important;
+}
+
 .animated-twitch {
     width: 15%;
     visibility: hidden;
     padding-left: 0.5%;
-    rotate: 1 1 90 2deg;
+    
 }
 
 .animated-quiz {
@@ -200,16 +231,43 @@ html, body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 50vh;
+    width: 300vw;
+    height: 300vh;
 }
 
+.animated-icons {
+    animation: bobbing 2s ease-in-out infinite alternate;
+    visibility: hidden;
+}
+
+.animated-icons2 {
+    animation: bobbing2 3s ease-in-out infinite alternate;
+    visibility: hidden;
+}
+
+.animated-icons3 {
+    animation: bobbing3 2s ease-in-out infinite alternate;
+    visibility: hidden;
+}
+
+@keyframes bobbing {
+    100% {transform: translateY(-12%);}
+}
+
+@keyframes bobbing2 {
+    100% {transform: translateY(-15%);}
+}
+
+@keyframes bobbing3 {
+    20% {transform: translateY(0%)}
+    100% {transform: translateY(-15%);}
+}
 
 
 
 /* RESPONSIVENESS */
 
-/* Makes search page responsive */
+/* Makes search page responsive up to 320px */
 @media only screen and (max-width: 800px) {
     .col-md-6 {
       width: 100vw !important;
@@ -242,7 +300,7 @@ html, body {
     }
 }
 
-/* Makes the login page responsive */
+/* Makes the login page responsive up to 320px */
 
 @media only screen and (max-width: 1425px) {
     .col-7 {
