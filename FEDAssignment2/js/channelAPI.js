@@ -1,6 +1,7 @@
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
+
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -19,7 +20,7 @@ function FinishLoading() {
 
 
 for (let i = 0; i < 100; i++) {
-   
+
     if (JSON.parse(localStorage.getItem(i)) != null) {
         userId = JSON.parse(localStorage.getItem(i));
         console.log(userId);
