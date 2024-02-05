@@ -569,7 +569,7 @@ function qn8() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-2 w-100">What month was ` + data.data[0].user_name + ` created at</h1>
+                        <h1 class="font-100 text-center px-3 w-100">What month was ` + data.data[0].user_name + ` created in</h1>
                         <div class="d-flex justify-content-center my-3">
                             <input id="answer" class="w-75" type="text">
                         </div>
@@ -632,7 +632,7 @@ function qn9() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-2 w-100">What year was ` + data.data[0].user_name + ` created at</h1>
+                        <h1 class="font-100 text-center px-3 w-100">What year was ` + data.data[0].user_name + ` created in</h1>
                         <div class="d-flex justify-content-center my-3">
                             <input id="answer" class="w-75" type="text">
                         </div>

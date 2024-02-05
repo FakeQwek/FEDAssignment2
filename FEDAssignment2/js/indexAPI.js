@@ -75,7 +75,7 @@ function liveUser(array) {
                 
                 let tag1 = "";
                 let tag2 = "";
-                if (userTags[tagIndex +1 ] != null) {
+                if (userTags[tagIndex + 1] != null) {
                   tag1 = userTags[tagIndex];
                   tag2 = userTags[tagIndex];
                 }
@@ -96,7 +96,7 @@ function liveUser(array) {
                                     <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[index] + `</div>
                                 </div>
                             </button>`
-                if (index % 2 == 0) 
+                if (index < 9) 
                 {
                   el.insertAdjacentHTML("beforeend", html)
                 }
@@ -229,7 +229,7 @@ function getClips(array) {
 
 
 
-fetch("https://api.twitch.tv/helix/streams?first=19 ", {
+fetch("https://api.twitch.tv/helix/streams?first=18 ", {
     method: "GET",
     headers: {
         "Client-ID": clientId,
