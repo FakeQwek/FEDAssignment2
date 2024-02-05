@@ -1,6 +1,8 @@
 const userIds = [];
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
+let apiCall = "https://api.twitch.tv/helix/users?id="
+
 
 function Search() {
   const searchQuery = document.querySelector(".form-control").value;
@@ -18,7 +20,7 @@ function FinishLoading() {
      }, 1250)
   }
 
-localStorage.clear();
+
 
 
 
@@ -33,7 +35,7 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     return response.json();
 })
 .then(json => {
-   
+   console.log(json.data);
    //Prints whole file : console.log(json.data);
    //Prints first channel's broadcasters language : console.log(json.data[0].broadcaster_language);
    let index = 0;
@@ -46,21 +48,15 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
      let tag2 = "";
      
      let usersId = json.data[index].id;
-     console.log(usersId);
-     fetch("https://api.twitch.tv/helix/streams?user_id=" + usersId +"&first=100", {
-      method: "GET",
-      headers: {
-      "Client-ID": clientId,
-      "Authorization": "Bearer " + oAuth
-      }
-     })
-     .then(response => {
-      return response.json();
-     })
-     .then(json => {
-      userIds.push(usersId);
-      console.log("pushed: " + usersId);
-    })
+     userIds.push(usersId);
+     if (index == 0) {
+       apiCall += usersId;
+      
+     }
+     else {
+      apiCall += "&id=" + usersId;
+
+     }
     
      function Tag(){
       try {
@@ -98,7 +94,7 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
                     <div class="font-24 d-flex flex-fill justify-content-end">` + "" + `</div>
                   </div>
                  </button>`
-                if (index % 2 == 0) 
+                if (index < 50) 
                 {
                   //will be placed on the left even numbers
                   column.insertAdjacentHTML("beforeend", html)
@@ -110,25 +106,43 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
                 }
      index++;
    })
-   const channelButton = document.getElementsByClassName("user-id");
+   console.log(apiCall);
    
-   for (let k = 0; k < channelButton.length; k++) {
-    console.log("setting button listeners: " + k + " " + userIds[k]);
-    channelButton[k].addEventListener("click", (el) => {
-      localStorage.setItem(k, JSON.stringify(userIds[k]));
-      location.href = "channel.html";
-       
-    })
-   }
-   FinishLoading();
- })
-  
-          
-    
+   fetch(apiCall, {
+    method: "GET",
+    headers: {
+    "Client-ID": clientId,
+    "Authorization": "Bearer " + oAuth
+    }
+   })
+   .then(response => {
+    return response.json();
+   })
+   .then(json => {
+    console.log(json.data);
+    const channelButton = document.getElementsByClassName("user-id");
+   
 
-
-
-
-
+    //Iterates through each channel button
+    for (let count = 0; count < channelButton.length; count++) {      
+       //Iterates through the json data and matches with the position of the actual channel
+       for(let index = 0; index < json.data.length; index++) {
+        if (json.data[index].id == userIds[count]) {
+              channelButton[count].addEventListener("click", (el) => {
+              localStorage.setItem(count, JSON.stringify(json.data[index].id));
+              location.href = "channel.html";
+            })
+        }
+       }
+      
         
+    
+     FinishLoading();
+    }
+  })
+  
+  console.log(userIds);
+    
+ })
 
+ 

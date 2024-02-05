@@ -96,7 +96,7 @@ function liveUser(array) {
                                     <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[index] + `</div>
                                 </div>
                             </button>`
-                if (index % 2 == 0) 
+                if (index < 9) 
                 {
                   el.insertAdjacentHTML("beforeend", html)
                 }
