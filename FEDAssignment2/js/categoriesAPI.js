@@ -2,6 +2,23 @@ const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 let getGames = "https://api.twitch.tv/helix/games/top?first=100";
 
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+  
+  function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1250)
+    }
+  
+
 fetch(getGames, {
     method: "GET",
     headers: {
@@ -22,3 +39,4 @@ fetch(getGames, {
         el.insertAdjacentHTML("beforeend", html);
     }
 })
+FinishLoading();
