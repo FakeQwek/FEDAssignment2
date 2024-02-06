@@ -37,7 +37,6 @@ function FinishLoading() {
         }
         animatedIcons1[0].style.visibility = 'visible';
        
-     
        }, 850)
   }
 
@@ -108,14 +107,14 @@ function liveUser(array) {
                 let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
                                 <div class="d-flex flex-row my-3 align-items-center">
                                     <img src="` + json.data[position].profile_image_url + `" class="rounded-circle max-width-100">
-                                        <div class="d-flex flex-column">
-                                            <div class="ms-4 font-32 d-flex">` + userNames[index] + `</div>
+                                        <div class="d-flex flex-column sm-font-12">
+                                            <div class="ms-4 font-32 d-flex sm-font-28">` + userNames[index] + `</div>
                                             <div class="d-flex flex-row">
                                                 <p class="ms-4">` + tag1 +`</p>
                                                 <p class="ms-4">` + tag2 +`</p>
                                             </div>
                                         </div>
-                                    <div class="font-24 d-flex flex-fill justify-content-end me-5">` + viewerCount[index] + `</div>
+                                    <div class="font-24 d-flex flex-fill justify-content-end sm-font-16">` + viewerCount[index] + `</div>
                                 </div>
                             </button>`
                 if (index < 9) 
@@ -200,38 +199,94 @@ function getTopGames() {
 
     //creates and adds the html for carousel of the top games being played
     .then(data => {
+        mql = window.matchMedia("only screen and (max-width: 768px)");
+        console.log(data);
         let el = document.getElementById("top-games");
-        html = `<div class="carousel-item active">
-                    <div class="">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[1].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[2].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[3].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[4].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[5].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="">
-                        <div class="card">
-                            <div class="card-body">
-                                <img src="` + data.data[6].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[7].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[8].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[9].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[10].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                                <img src="` + data.data[11].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
-                            </div>
-                        </div>
-                    </div>
-                </div>`
-                
 
-        el.insertAdjacentHTML("beforeend", html)
+        let mobileCarousel2 = `<div class="carousel-item active">
+                                <img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[1].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[2].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[3].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[4].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[5].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[6].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[7].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[8].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[9].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[10].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>
+                               <div class="carousel-item">
+                                <img src="` + data.data[11].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                               </div>`
+
+        let carousel2HTML = `<div class="carousel-item active">
+                                    <div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[1].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[2].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[3].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[4].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[5].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div>
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <img src="` + data.data[6].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[7].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[8].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[9].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[10].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                                <img src="` + data.data[11].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>`
+
+
+            if (mql.matches) {
+                el.innerHTML = mobileCarousel2;
+            }
+            else {
+                el.innerHTML = carousel2HTML;
+            }
+
+            mql.addListener(
+                function(mq) {
+                    if (mq.matches) {
+                        el.innerHTML = mobileCarousel2;
+                    } 
+                    else {
+                        el.innerHTML = carousel2HTML;
+                    }
+                }
+            );
     })
 }
 
@@ -319,7 +374,130 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
 
                 el.innerHTML = html;
 
+
+                
+
                 //calls FinishLoading when all API is done loading
                 FinishLoading();
+
             })
         })
+
+    let carousel1 = document.getElementById("carousel1");
+    let carousel1HTML = `<div class="col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60">
+                            <div class="container-fluid">
+                                <h1 class="text-white">Games</h1>
+                            </div>
+                            <div class="col">
+                                <img src="./images/twitch-controller.png" class="height-100 animated-icons">
+                            </div>
+                        </div>
+                        <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
+                            <div class="container-fluid">
+                                <h1 class="text-white">IRL</h1>
+                            </div>
+                            <div class="col">
+                                <img src="./images/twitch-mic.png" class="height-100 animated-icons2">
+                            </div>
+                        </div>
+                        <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
+                            <div class="container-fluid">
+                                <h1 class="text-white">Music</h1>
+                            </div>
+                            <div class="col">
+                                <img src="./images/twtich-headset.png" class="height-100 animated-icons3">
+                            </div>
+                        </div>
+                        <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
+                            <div class="container-fluid">
+                                <h1 class="text-white">Esports</h1>
+                            </div>
+                            <div class="col">
+                                <img src="./images/twtich-trophy.png" class="height-100 animated-icons2">
+                            </div>
+                        </div>
+                        <div class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60">
+                            <div class="container-fluid">
+                                <h1 class="text-white">Art</h1>
+                            </div>
+                            <div class="col">
+                                <img src="./images/twitch-art.png" class="height-100 animated-icons3">
+                            </div>
+                        </div>`
+
+
+
+    var mql = window.matchMedia("only screen and (max-width: 768px)");
+
+    let mobileCarousel1 = `<div class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="col justify-center bg-5c16c5 rounded align-center max-height-60 my-4 mx-4">
+                                            <div class="container-fluid">
+                                                <h1 class="text-white">Games</h1>
+                                            </div>
+                                            <div class="col">
+                                                <img src="./images/twitch-controller.png" class="height-100 animated-icons">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col justify-center bg-5c16c5 rounded align-center max-height-60 my-4 mx-4">
+                                            <div class="container-fluid">
+                                                <h1 class="text-white">IRL</h1>
+                                            </div>
+                                            <div class="col">
+                                                <img src="./images/twitch-mic.png" class="height-100 animated-icons2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col justify-center bg-5c16c5 rounded align-center max-height-60 my-4 mx-4">
+                                            <div class="container-fluid">
+                                                <h1 class="text-white">Music</h1>
+                                            </div>
+                                            <div class="col">
+                                                <img src="./images/twtich-headset.png" class="height-100 animated-icons3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col justify-center bg-5c16c5 rounded align-center max-height-60 my-4 mx-4">
+                                            <div class="container-fluid">
+                                                <h1 class="text-white">Esports</h1>
+                                            </div>
+                                            <div class="col">
+                                                <img src="./images/twtich-trophy.png" class="height-100 animated-icons2">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <div class="col justify-center bg-5c16c5 rounded align-center max-height-60 my-4 mx-4">
+                                            <div class="container-fluid">
+                                                <h1 class="text-white">Art</h1>
+                                            </div>
+                                            <div class="col">
+                                                <img src="./images/twitch-art.png" class="height-100 animated-icons3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>`;
+
+    if (mql.matches) {
+        carousel1.innerHTML = mobileCarousel1;
+    }
+    else {
+        carousel1.innerHTML = carousel1HTML;
+    }
+
+    mql.addListener(
+        function(mq) {
+            if (mq.matches) {
+                carousel1.innerHTML = mobileCarousel1;
+            } 
+            else {
+                carousel1.innerHTML = carousel1HTML;
+            }
+        }
+    );

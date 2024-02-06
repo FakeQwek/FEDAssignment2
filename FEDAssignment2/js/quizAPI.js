@@ -95,7 +95,7 @@ function qn2() {
     .then(data => {
 
         //creates the html for the laptop and mobile display
-        let page = `<div class="d-flex justify-content-center align-items-center vh-200 flex-column">
+        let page = `<div class="d-flex justify-content-center align-items-center vh-100 flex-column">
                         <h1 class="font-100 px-5 my-5 text-white text-center">Which is the current top category?</h1>
                         <div class="row mt-3 w-75">
                             <div id="1" class="btn shadow rounded px-4 py-1 mb-5 mx-5 w-50 d-flex justify-content-start col align-items-center bg-white sm-column">
