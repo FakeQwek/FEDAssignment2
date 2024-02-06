@@ -6,26 +6,19 @@ const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 localStorage.clear();
 localStorage.setItem("score", 0);
 
+function TransitionAnimation() {
+    const animation = document.querySelector("#transition"); 
+    const animationout = document.querySelector("#transition-out");
+    animation.style.display = 'inline';
 
-function CorrectAnimation() {
-    const correct = document.querySelector("#correct"); 
-    correct.style.display = 'inline';
     setTimeout(function(){
-    
-        correct.style.display='none';
-   }, 3700)
+        animation.style.display='none';
+   }, 2000)
+
+  
 }
 
-function WrongAnimation() {
-    const wrong = document.querySelector("#wrong");
-    wrong.style.display = 'inline';
-    setTimeout(function(){
-   
-        wrong.style.display='none';
-   }, 2800)
-}
 
-//fetching data of the top 5 streams (fetches 1 more stream just in case the api has an issue)
 fetch("https://api.twitch.tv/helix/streams?first=5", {
     method: "GET",
     headers: {
@@ -57,14 +50,16 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
 
         //updates the score based on the answer
         const correct = el => {
-            let currScore = localStorage.getItem("score")
 
+            let currScore = localStorage.getItem("score")
             localStorage.setItem("score", ++currScore);
-            qn2();
+            TransitionAnimation();
+            setTimeout(qn2(), 4000);
         }
 
         const wrong = el => {
-            qn2();
+            TransitionAnimation();
+            setTimeout(qn2(), 4000);
         }
         
         //addes the html elements for the buttons

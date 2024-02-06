@@ -1,6 +1,16 @@
-
+const userIds = [];
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
+let apiCall = "https://api.twitch.tv/helix/users?id="
+
+
+function Search() {
+  const searchQuery = document.querySelector(".form-control").value;
+  localStorage.setItem("Search", searchQuery);
+  window.location.href="./search.html";
+  return false;
+}
+
 
 function FinishLoading() {
   setTimeout(function(){
@@ -9,7 +19,12 @@ function FinishLoading() {
       
      }, 1250)
   }
-fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100", {
+
+
+
+
+
+fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100" +"&live_only=true", {
     method: "GET",
     headers: {
     "Client-ID": clientId,
@@ -20,7 +35,7 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     return response.json();
 })
 .then(json => {
-
+   console.log(json.data);
    //Prints whole file : console.log(json.data);
    //Prints first channel's broadcasters language : console.log(json.data[0].broadcaster_language);
    let index = 0;
@@ -32,9 +47,20 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
      let tag1 = "";
      let tag2 = "";
      
+     let usersId = json.data[index].id;
+     userIds.push(usersId);
+     if (index == 0) {
+       apiCall += usersId;
+      
+     }
+     else {
+      apiCall += "&id=" + usersId;
+
+     }
+    
      function Tag(){
       try {
-        console.log(channel.tags.length)
+        /*console.log(channel.tags.length)*/
         if (channel.tags.length > 1) {
             tag1 = channel.tags[0]
             tag2 = channel.tags[1]
@@ -68,33 +94,55 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
                     <div class="font-24 d-flex flex-fill justify-content-end">` + "" + `</div>
                   </div>
                  </button>`
-                if (index % 2 == 1) 
+                if (index < 50) 
                 {
+                  //will be placed on the left even numbers
                   column.insertAdjacentHTML("beforeend", html)
                 }
                 else 
                 {
+                  //will be placed on the right not even numbers
                   column2.insertAdjacentHTML("beforeend", html)
                 }
      index++;
    })
+   console.log(apiCall);
+   
+   fetch(apiCall, {
+    method: "GET",
+    headers: {
+    "Client-ID": clientId,
+    "Authorization": "Bearer " + oAuth
+    }
+   })
+   .then(response => {
+    return response.json();
+   })
+   .then(json => {
+    console.log(json.data);
+    const channelButton = document.getElementsByClassName("user-id");
    
 
-   
-   FinishLoading();
-          
-  })
-    
-
-
-
-
-
-        function Search() {
-            const searchQuery = document.querySelector(".form-control").value;
-            localStorage.setItem("Search", searchQuery);
-            window.location.href="./search.html";
-            return false;
+    //Iterates through each channel button
+    for (let count = 0; count < channelButton.length; count++) {      
+       //Iterates through the json data and matches with the position of the actual channel
+       for(let index = 0; index < json.data.length; index++) {
+        if (json.data[index].id == userIds[count]) {
+              channelButton[count].addEventListener("click", (el) => {
+              localStorage.setItem(count, JSON.stringify(json.data[index].id));
+              location.href = "channel.html";
+            })
         }
+       }
+      
         
+    
+     FinishLoading();
+    }
+  })
+  
+  console.log(userIds);
+    
+ })
 
+ 
