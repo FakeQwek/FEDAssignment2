@@ -149,6 +149,9 @@ html, body {
 .margin-left-40 {
     margin-left: 320px;
 }
+.margin-5vw {
+    margin-inline: 10vw;
+}
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
@@ -217,6 +220,10 @@ html, body {
     height: 100vh;
    
     
+}
+
+.circle {
+    border-radius: 50%;
 }
 
 input[type="search"]::-webkit-search-cancel-button {

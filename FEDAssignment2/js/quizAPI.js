@@ -65,7 +65,7 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
         //addes the html elements for the buttons
         for (let i = 1; i < 5; i++) {
             el = document.getElementById(num[i - 1]);
-            el.innerHTML = `<img src="` + data.data[i - 1].profile_image_url + `" class="rounded-circle max-width-100 my-3">
+            el.innerHTML = `<img src="` + data.data[i - 1].profile_image_url + `" class="circle max-width-100 my-3">
                             <div class="font-32 d-flex px-3">` + data.data[i - 1].display_name + `</div>`
 
             if (i == 1) {
@@ -96,7 +96,7 @@ function qn2() {
 
         //creates the html for the laptop and mobile display
         let page = `<div class="d-flex justify-content-center align-items-center vh-200 flex-column">
-                        <h1 class="font-100 px-5 my-5">Which is the current top category?</h1>
+                        <h1 class="font-100 px-5 my-5 text-white text-center">Which is the current top category?</h1>
                         <div class="row mt-3 w-75">
                             <div id="1" class="btn shadow rounded px-4 py-1 mb-5 mx-5 w-50 d-flex justify-content-start col align-items-center bg-white sm-column">
                                 <h4></h4>
@@ -117,7 +117,7 @@ function qn2() {
                     </div>`
 
         let mobilePage = `<div class="d-flex justify-content-center align-items-center vh-200 flex-column">
-                            <h1 class="font-100 px-5 my-5 text-center">Which is the current top category?</h1>
+                            <h1 class="font-100 px-5 my-5 text-center text-white">Which is the current top category?</h1>
                             <div class="row mt-3 w-100">
                                 <div id="1" class="btn shadow rounded px-4 py-1 mb-5 mx-5 w-50 d-flex justify-content-start col align-items-center bg-white sm-column">
                                     <h4></h4>
@@ -215,23 +215,23 @@ function qn3() {
         
         let page = `<div class="d-flex justify-content-center flex-column">
                         <div class="d-flex justify-content-end align-items-center vh-100 row">
-                        <div class="col vh-100 align-items-end d-flex flex-column justify-content-center">
-                            <h1 class="font-100 w-50">What is this category called?</h1>
-                            <div class="d-flex justify-content-start w-50 mt-3">
-                            <input id="answer" class="w-75" type="text">
-                            <button id="submit" class="btn text-white border-0">Submit</button>
+                            <div class="col vh-100 align-items-center d-flex flex-column justify-content-center px-5">
+                                <h1 class="font-100 w-50 text-white">What is this category called?</h1>
+                                <div class="d-flex justify-content-start w-50 mt-3">
+                                <input id="answer" class="w-75" type="text">
+                                <button id="submit" class="btn text-white border-0">Submit</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col vh-100 d-flex align-items-center">
-                            <div class="w-75 h-75 d-flex">
-                            <img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded">
+                            <div class="col vh-100 d-flex align-items-center">
+                                <div class="w-75 h-75 d-flex">
+                                    <img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded">
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>`
 
         let mobilePage = `<div class="d-flex justify-content-center flex-column">
-                            <h1 class="font-100 px-5 text-center">Catergory Name?</h1>
+                            <h1 class="font-100 px-5 text-center text-white">Catergory Name?</h1>
                                 <div class="d-flex justify-content-center">
                                 <img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded my-3">
                             </div>
@@ -334,26 +334,26 @@ function qn4() {
 
             let page = `<div class="d-flex justify-content-center flex-column">
                         <div class="d-flex justify-content-end align-items-center vh-100 row">
-                        <div class="col vh-100 align-items-end d-flex flex-column justify-content-center">
-                            <h1 class="font-100 w-50">What is this streamer's name?</h1>
-                            <div class="d-flex justify-content-start w-50 mt-3">
-                            <input id="answer" class="w-75" type="text">
-                            <button id="submit" class="btn text-white border-0">Submit</button>
+                            <div class="col vh-100 align-items-center d-flex flex-column justify-content-center">
+                                <h1 class="font-100 w-50 text-white">What is this streamer's name?</h1>
+                                <div class="d-flex justify-content-start w-50 mt-3">
+                                <input id="answer" class="w-75" type="text">
+                                <button id="submit" class="btn text-white border-0">Submit</button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col vh-100 d-flex align-items-center">
-                            <div class="w-50 h-50 d-flex ms-5">
-                                <img src="` + data.data[0].profile_image_url + `" class="rounded-circle">
+                            <div class="col vh-100 d-flex align-items-center">
+                                <div class="w-50 h-50 d-flex ms-5">
+                                    <img src="` + data.data[0].profile_image_url + `" class="rounded-circle">
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>`
 
             let mobilePage = `<div class="d-flex justify-content-center flex-column">
-                                <h1 class="font-100 px-5 text-center">Streamer Name?</h1>
+                                <h1 class="font-100 px-5 text-center text-white">Streamer Name?</h1>
                                 <div class="d-flex justify-content-center">
                                     <div class="w-50 h-50 d-flex justify-content-center my-3">
-                                        <img src="` + data.data[0].profile_image_url + `" class="rounded-circle">
+                                        <img src="` + data.data[0].profile_image_url + `" class="circle">
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center my-3">
@@ -409,7 +409,7 @@ function qn5() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-2 w-100">` + data.data[0].user_name + `'s viewer count is more than 20K</h1>
+                        <h1 class="font-100 text-center px-2 w-100 text-white">` + data.data[0].user_name + `'s viewer count is more than 20K</h1>
                         <div class="my-3 d-flex w-75 justify-content-around sm-column">
                             <button id="trueButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">True</span></button>
                             <button id="falseButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">False</span></button>
@@ -462,7 +462,7 @@ function qn6() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-2 w-100">` + data.data[0].user_name + ` streams in english</h1>
+                        <h1 class="font-100 text-center px-2 w-100 text-white">` + data.data[0].user_name + ` streams in english</h1>
                         <div class="my-3 d-flex w-75 justify-content-around sm-column">
                             <button id="trueButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">True</span></button>
                             <button id="falseButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">False</span></button>
@@ -515,7 +515,7 @@ function qn7() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-2 w-100">` + data.data[0].user_name + ` has more than 1M followers</h1>
+                        <h1 class="font-100 text-center px-2 w-100 text-white">` + data.data[0].user_name + ` has more than 1M followers</h1>
                         <div class="my-3 d-flex w-75 justify-content-around sm-column">
                             <button id="trueButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">True</span></button>
                             <button id="falseButton" class="btn bg-white font sm-w25-100 my-2"><span class="font-100">False</span></button>
@@ -580,7 +580,7 @@ function qn8() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-3 w-100">What month was ` + data.data[0].user_name + ` created in</h1>
+                        <h1 class="font-100 text-center px-3 w-100 text-white">What month was ` + data.data[0].user_name + ` created in</h1>
                         <div class="d-flex justify-content-center my-3">
                             <input id="answer" class="w-75" type="text">
                         </div>
@@ -643,7 +643,7 @@ function qn9() {
     })
     .then(data => {
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
-                        <h1 class="font-100 text-center px-3 w-100">What year was ` + data.data[0].user_name + ` created in</h1>
+                        <h1 class="font-100 text-center px-3 w-100 text-white">What year was ` + data.data[0].user_name + ` created in</h1>
                         <div class="d-flex justify-content-center my-3">
                             <input id="answer" class="w-75" type="text">
                         </div>
