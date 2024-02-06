@@ -68,23 +68,23 @@
   </nav>
 
     <main>
-      <div class="container-fluid bg-5c16c5 height-400 align-center shadow">
-        <div class="ms-5 inter-tight-bold text-white d-flex flex-column">
-          <div class="justify-end">
-            <h1 class="">Welcome to<br><span class="font-100">TwitchStats</span></h1>
-            <dotlottie-player class="ms-4 animated-twitch"src="https://lottie.host/e6bb34f6-be69-43d6-9968-fd7fda0f11aa/9Ljq8FymTy.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
+      <div class="container-fluid bg-5c16c5 height-400 align-center shadow d-flex">
+        <div class="d-flex inter-tight-bold text-white flex-column">
+          <div class="d-flex align-items-end sm-margin-s48">
+            <h1>Welcome to<br><span class="font-100">TwitchStats</span></h1>
+            <dotlottie-player class="ms-4 animated-twitch remove"src="https://lottie.host/e6bb34f6-be69-43d6-9968-fd7fda0f11aa/9Ljq8FymTy.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
             
           </div>
-          <div class="d-flex flex-row justify-content-between">
-            <div>
+          <div class="d-flex flex-row justify-content-between sm-margin-s48">
+            <div class="remove">
               <h2 id="viewer-count-100" class="mt-5">0</h2>
               <p>Viewers Watching Top 100</p>
             </div>
-            <div>
+            <div class="remove">
               <h2 id="no1-follower-count" class="mt-5">0</h2>
               <p class="ms-5">#1 Stream Follower Count</p>
             </div>
-            <div>
+            <div class="remove">
               <h2 id="top-category" class="mt-5">Category</h2>
               <p class="ms-5">Top Category</p>
             </div>
@@ -95,7 +95,7 @@
       </div>
 
       <section>
-        <div class="row mt-5">
+        <div id="carousel1" class="row mt-5">
           <div class="col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60">
             <div class="container-fluid">
               <h1 class="text-white">Games</h1>
@@ -136,27 +136,28 @@
               <img src="./images/twitch-art.png" class="height-100 animated-icons3">
             </div>
           </div>
+        </div>
           
 
         <div class="row mt-5 inter-tight-bold">
-          <div id="live-channels" class="col ms-5">
+          <div id="live-channels" class="col sm-margin-s48">
             <h2>Top Live Channels</h2>
           </div>
-          <div id="live-channels2" class="col ms-5">
-            <h2>Top Live Channels</h2>
+          <div id="live-channels2" class="col sm-margin-s48">
+            <h2 class="remove">Top Live Channels</h2>
           </div>
           </div>
         </div>
 
 
         <div class="mt-5 inter-tight-bold">
-          <h2 class="ms-5">Top Categories</h2>
+          <h2 class="sm-margin-s48">Top Categories</h2>
           <div id="" class="mx-5 mt-5 d-flex flex-row justify-content-between">
           </div>
         </div>
 
         <div class="carousel slide" data-bs-ride="carousel">
-          <div id="top-games" class="carousel-inner">
+          <div id="top-games" class="carousel-inner ms-5">
             
           </div>
         </div>
