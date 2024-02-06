@@ -1,3 +1,4 @@
+//setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 

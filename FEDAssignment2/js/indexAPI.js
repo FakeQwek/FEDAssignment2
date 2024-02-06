@@ -1,18 +1,25 @@
+//setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
+
+//setting the lists that will be used
 const viewerCount = [];
 const userIds = [];
 const userNames = [];
 const gameCount = [];
 const userTags = [];
+
+//setting the variables that will be used
 let sum = 0;
 let games = 0;
 let getUsers = "https://api.twitch.tv/helix/users?id=";
 let getGames = "https://api.twitch.tv/helix/games/top?first=12";
 let getChannel = "https://api.twitch.tv/helix/channels?id=";
 
+//clears local storage on page load
 localStorage.clear();
 
+//removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -23,6 +30,7 @@ function FinishLoading() {
   }
 
 
+//gets the data of the top current live streamers and creates the html elements in their respective containers
 function liveUser(array) {
     for (let i = 0; i < array.length; i++) {
         getUsers += userIds[i] + "&id=";
@@ -31,6 +39,7 @@ function liveUser(array) {
         getUsers = getUsers.slice(0,-4);
         getChannel = getUsers.slice(0,-4);
 
+        //fetching the channel data
         fetch(getChannel, {
             method: "GET",
             headers: {
@@ -45,7 +54,7 @@ function liveUser(array) {
             
         })
 
-
+        //fetching the user data
         fetch(getUsers, {
             method: "GET",
             headers: {
@@ -83,6 +92,7 @@ function liveUser(array) {
                   tag1 = userTags[tagIndex];
                 }
                 
+                //setting the html for the element to be created
                 let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
                                 <div class="d-flex flex-row my-3 align-items-center">
                                     <img src="` + json.data[position].profile_image_url + `" class="rounded-circle max-width-100">
@@ -108,10 +118,14 @@ function liveUser(array) {
                
             })
 
+            //gets all elements with class user-id
             const el2 = document.getElementsByClassName("user-id");
 
+            //adds event listener to the channel buttons
             for (let k = 0; k < array.length; k++) {
                 el2[k].addEventListener("click", (el) => {
+
+                    //adds data to local storage and loads the channel page
                     localStorage.setItem(k, JSON.stringify(userIds[k]));
                     location.href = "channel.html";
                 })
@@ -119,17 +133,23 @@ function liveUser(array) {
         })
 }
 
+//gets the total viewers for the top 100 streamers
 function totalViewers(viewerCount) {
     for (let i = 0; i < viewerCount.length; i++) {
         sum += viewerCount[i];
     }
+
+    //addes the element for viewer count for top 100 streamers
     let el = document.getElementById("viewer-count-100");
     let html = `<h2 id="viewer-count-100" class="mt-5">` + sum + `</h2>`
 
     el.innerHTML = html;
 }
 
+//gets the number of channel followers for the current top live channel
 function channelFollowers(broadcaster_id) {
+
+    //fetching the channel follower data
     fetch("https://api.twitch.tv/helix/channels/followers?broadcaster_id=" + broadcaster_id, {
         method: "GET",
         headers: {
@@ -141,6 +161,8 @@ function channelFollowers(broadcaster_id) {
         return response.json();
     })
     .then(data => {
+
+        //adds the html element for top 1 channel followers
         let el = document.getElementById("no1-follower-count");
         let html = `<h2 id="no1-follower-count" class="ms-5 mt-5">` + data.total + `</h2>`
 
@@ -148,7 +170,10 @@ function channelFollowers(broadcaster_id) {
     })
 }
 
+//gets the current top games being played
 function getTopGames() {
+
+    //fetching the data for top games
     fetch(getGames, {
         method: "GET",
         headers: {
@@ -159,8 +184,9 @@ function getTopGames() {
     .then(response => {
         return response.json();
     })
+
+    //creates and adds the html for carousel of the top games being played
     .then(data => {
-        //console.log(data);
         let el = document.getElementById("top-games");
         html = `<div class="carousel-item active">
                     <div class="">
@@ -196,12 +222,16 @@ function getTopGames() {
     })
 }
 
+//gets the value from the searh container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
+
+    //sends user to the search page
     window.location.href="./search.html";
     return false;
 }
+
 
 
 
@@ -228,7 +258,7 @@ function getClips(array) {
 }
 
 
-
+//fetching data fro the top 18 streams
 fetch("https://api.twitch.tv/helix/streams?first=18 ", {
     method: "GET",
     headers: {
@@ -240,7 +270,8 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
         return response.json();
     })  
     .then(data => {
-        console.log(data);
+
+        //adds data to their respective lists
         for (let i = 0; i < data.data.length; i++) {
             console.log(data.data[0].started_at)
             viewerCount.push(data.data[i].viewer_count);
@@ -249,11 +280,14 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
             userTags.push(data.data[i].tags[0]);
             userTags.push(data.data[i].tags[1]);
         }
+
+        //calls the functions to get data and add html elements
         liveUser(data.data);
         totalViewers(viewerCount);
         channelFollowers(data.data[0].user_id);
         getTopGames();
 
+        //fetching the top game data
         fetch("https://api.twitch.tv/helix/games/top?first=1", {
             method: "GET",
             headers: {
@@ -265,10 +299,14 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                 return response.json();
             })
             .then(data => {
+
+                //adds the html element of the top game name
                 let el = document.getElementById("top-category");
                 let html = `<h2 id="top-category" class="ms-5 mt-5">` + data.data[0].name + `</h2>`
 
                 el.innerHTML = html;
+
+                //calls FinishLoading when all API is done loading
                 FinishLoading();
             })
         })

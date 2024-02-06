@@ -1,5 +1,6 @@
 let el = document.getElementById("login");
 
+//gets the inputs for username and password and checks if the data is in the database
 function submit() {
     let username = document.getElementById("username").value;
 

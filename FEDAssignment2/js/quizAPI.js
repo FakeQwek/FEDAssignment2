@@ -1,9 +1,11 @@
+//setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
-
+//clears local storage and then sets score item with value 0
 localStorage.clear();
 localStorage.setItem("score", 0);
+
 
 function CorrectAnimation() {
     const correct = document.querySelector("#correct"); 
@@ -23,6 +25,7 @@ function WrongAnimation() {
    }, 2800)
 }
 
+//fetching data of the top 5 streams (fetches 1 more stream just in case the api has an issue)
 fetch("https://api.twitch.tv/helix/streams?first=5", {
     method: "GET",
     headers: {
@@ -34,7 +37,8 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
     return response.json();
 })
 .then(data => {
-    console.log(data.data);
+
+    //fetching the data for users
     fetch("https://api.twitch.tv/helix/users?id=" + data.data[0].user_id + "&id=" + data.data[1].user_id + "&id=" + data.data[2].user_id + "&id=" + data.data[3].user_id, {
         method: "GET",
         headers: {
@@ -46,9 +50,12 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
         return response.json();
     })
     .then(data => {
+
+        //randomly selects a format to display the options in
         let random = [[1, 2, 3, 4], [4, 2, 1, 3], [2, 3, 4, 1]];
         let num = random[Math.floor(Math.random() * 3)];
 
+        //updates the score based on the answer
         const correct = el => {
             let currScore = localStorage.getItem("score")
 
@@ -60,6 +67,7 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
             qn2();
         }
         
+        //addes the html elements for the buttons
         for (let i = 1; i < 5; i++) {
             el = document.getElementById(num[i - 1]);
             el.innerHTML = `<img src="` + data.data[i - 1].profile_image_url + `" class="rounded-circle max-width-100 my-3">
@@ -75,7 +83,10 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
     })
 })
 
+//question 2
 function qn2() {
+    
+    //fetching current top 4 games
     fetch("https://api.twitch.tv/helix/games/top?first=4", {
     method: "GET",
     headers: {
@@ -87,6 +98,8 @@ function qn2() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop and mobile display
         let page = `<div class="d-flex justify-content-center align-items-center vh-200 flex-column">
                         <h1 class="font-100 px-5 my-5">Which is the current top category?</h1>
                         <div class="row mt-3 w-75">
@@ -129,9 +142,11 @@ function qn2() {
                             </div>
                         </div>`
         
+        //randomly selects a format to display the options in
         let random = [[1, 2, 3, 4], [4, 2, 1, 3], [2, 3, 4, 1]];
         let num = random[Math.floor(Math.random() * 3)];
 
+        //updates the score based on the answer
         const correct = el => {
             let currScore = localStorage.getItem("score")
 
@@ -143,6 +158,7 @@ function qn2() {
             qn3();
         }
 
+        
         let pageEl = document.getElementById("page");
         var mql = window.matchMedia("only screen and (max-width: 768px)");
         if (mql.matches) {
