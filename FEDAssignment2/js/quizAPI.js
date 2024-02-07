@@ -1,7 +1,7 @@
 //setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
-
+const animation = document.querySelector("#transition"); 
 
 //clears local storage and then sets score item with value 0
 
@@ -32,13 +32,12 @@ FinishLoading();
 
 
 function TransitionAnimation() {
-    const animation = document.querySelector("#transition"); 
-    const animationout = document.querySelector("#transition-out");
-    animation.style.display = 'inline';
-
+    animation.style.display = 'block';
+    animation.play();
     setTimeout(function(){
+        animation.stop();
         animation.style.display='none';
-   }, 2000)
+   }, 3000)
 
   
 }
@@ -68,7 +67,7 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
         return response.json();
     })
     .then(data => {
-
+        animation.stop();
         //randomly selects a format to display the options in
         let random = [[1, 2, 3, 4], [4, 2, 1, 3], [2, 3, 4, 1]];
         let num = random[Math.floor(Math.random() * 3)];
@@ -86,8 +85,8 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
             TransitionAnimation();
             setTimeout(qn2(), 4000);
         }
-        
-        //addes the html elements for the buttons
+       
+        //adds the html elements for the buttons
         for (let i = 1; i < 5; i++) {
             el = document.getElementById(num[i - 1]);
             el.innerHTML = `<img src="` + data.data[i - 1].profile_image_url + `" class="circle max-width-100 my-3">
@@ -95,9 +94,11 @@ fetch("https://api.twitch.tv/helix/streams?first=5", {
 
             if (i == 1) {
                 el.addEventListener("click", correct);
+                
             }
             else {
                 el.addEventListener("click", wrong)
+                
             }
         }
     })
@@ -171,13 +172,18 @@ function qn2() {
             let currScore = localStorage.getItem("score")
 
             localStorage.setItem("score", ++currScore);
-            qn3();
+            console.log("test");
+            TransitionAnimation();
+            setTimeout(qn3(), 4000);
+        
         }
 
         const wrong = el => {
-            qn3();
+            console.log("test");
+            TransitionAnimation();
+            setTimeout(qn3(), 4000);
         }
-
+        
         
         let pageEl = document.getElementById("page");
         var mql = window.matchMedia("only screen and (max-width: 768px)");
@@ -298,12 +304,15 @@ function qn3() {
                     let currScore = localStorage.getItem("score")
 
                     localStorage.setItem("score", ++currScore);
-                    qn4();
+                    TransitionAnimation();
+                    setTimeout(qn4(), 4000);
                 }
-
+               
                 const wrong = el => {
-                    qn4();
+                    TransitionAnimation();
+                    setTimeout(qn4(), 4000);
                 }
+                
                     }
         );
 
@@ -322,12 +331,15 @@ function qn3() {
             let currScore = localStorage.getItem("score")
 
             localStorage.setItem("score", ++currScore);
-            qn4();
+            TransitionAnimation();
+            setTimeout(qn4(), 4000);
         }
 
         const wrong = el => {
-            qn4();
+            TransitionAnimation();
+            setTimeout(qn4(), 4000);
         }
+        
     })
 }
 
@@ -411,12 +423,15 @@ function qn4() {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn5();
+                TransitionAnimation();
+                setTimeout(qn5(), 4000);
             }
 
             const wrong = el => {
-                qn5();
+                TransitionAnimation();
+                setTimeout(qn5(), 4000);
             }
+            
         })
     })
 }
@@ -453,23 +468,29 @@ function qn5() {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn6();
+                TransitionAnimation();
+                setTimeout(qn6(), 4000);
             }
             else {
-                qn6();
+                TransitionAnimation();
+                setTimeout(qn6(), 4000);
             }
+           
         })
 
         falseButton.addEventListener("click", func => {
             if (viewerCount > 20000) {
-                qn6();
+                TransitionAnimation();
+                setTimeout(qn6(), 4000);
             }
             else {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn6();
+                TransitionAnimation();
+                setTimeout(qn6(), 4000);
             }
+           
         })
     })
 }
@@ -506,23 +527,29 @@ function qn6() {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn7();
+                TransitionAnimation();
+                setTimeout(qn7(), 4000);
             }
             else {
-                qn7();
+                TransitionAnimation();
+                setTimeout(qn7(), 4000);
             }
+            
         })
 
         falseButton.addEventListener("click", func => {
             if (language == "en") {
-                qn7();
+                TransitionAnimation();
+                setTimeout(qn7(), 4000);
             }
             else {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn7();
+                TransitionAnimation();
+                setTimeout(qn7(), 4000);
             }
+            
         })
     })
 }
@@ -570,23 +597,29 @@ function qn7() {
                     let currScore = localStorage.getItem("score")
 
                     localStorage.setItem("score", ++currScore);
-                    qn8();
+                    TransitionAnimation();
+                    setTimeout(qn8(), 4000);
                 }
                 else {
-                    qn8();
+                    TransitionAnimation();
+                    setTimeout(qn8(), 4000);
                 }
+                
             })
 
             falseButton.addEventListener("click", func => {
                 if (followers > 1000000) {
-                    qn8();
+                    TransitionAnimation();
+                    setTimeout(qn8(), 4000);
                 }
                 else {
                     let currScore = localStorage.getItem("score")
 
                     localStorage.setItem("score", ++currScore);
-                    qn8();
+                    TransitionAnimation();
+                    setTimeout(qn8(), 4000);
                 }
+               
             })
         })
     })
@@ -645,12 +678,15 @@ function qn8() {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn9();
+                TransitionAnimation();
+                setTimeout(qn9(), 4000);
             }
 
             const wrong = el => {
-                qn9();
+                TransitionAnimation();
+                setTimeout(qn9(), 4000);
             }
+           
         })
     })
 }
@@ -706,14 +742,23 @@ function qn9() {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn10();
+                TransitionAnimation();
+                setTimeout(quizEnd(), 4000);
+                
             }
 
             const wrong = el => {
-                qn10();
+                TransitionAnimation();
+                setTimeout(quizEnd(), 4000);
             }
+           
         })
     })
+
+}
+ 
+function quizEnd() {
+  location.replace("./quiz-end.html");
 }
 
 

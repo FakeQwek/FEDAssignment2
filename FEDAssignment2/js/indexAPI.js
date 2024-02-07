@@ -16,18 +16,26 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let getGames = "https://api.twitch.tv/helix/games/top?first=12";
 let getChannel = "https://api.twitch.tv/helix/channels?id=";
 
-//clears local storage on page load
-localStorage.clear();
+//clears local storage on page load 
+localStorage.clear(); 
+
+
+
+
+
+
 
 //removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
         loader.remove();
+        let animatedIcons1 = document.getElementsByClassName("animated-icons");
+        let animatedIcons2 = document.getElementsByClassName("animated-icons2");
+        let animatedIcons3 = document.getElementsByClassName("animated-icons3");
+        
         const icon = document.querySelector(".animated-twitch");
-        const animatedIcons1 = document.getElementsByClassName("animated-icons");
-        const animatedIcons2 = document.getElementsByClassName("animated-icons2");
-        const animatedIcons3 = document.getElementsByClassName("animated-icons3");
+        
         icon.style.visibility='visible';
         for (let i = 0; i < animatedIcons2.length; i++) {
             animatedIcons2[i].style.visibility = 'visible';
@@ -36,7 +44,7 @@ function FinishLoading() {
             animatedIcons3[i].style.visibility = 'visible';
         }
         animatedIcons1[0].style.visibility = 'visible';
-       
+        console.log("Load done");
        }, 850)
   }
 
@@ -482,22 +490,37 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
+                            </div>`
 
     if (mql.matches) {
         carousel1.innerHTML = mobileCarousel1;
+        
     }
     else {
         carousel1.innerHTML = carousel1HTML;
+        
     }
 
     mql.addListener(
         function(mq) {
             if (mq.matches) {
                 carousel1.innerHTML = mobileCarousel1;
+              
             } 
             else {
                 carousel1.innerHTML = carousel1HTML;
+                
             }
+            let animatedIcons1 = document.getElementsByClassName("animated-icons");
+            let animatedIcons2 = document.getElementsByClassName("animated-icons2");
+            let animatedIcons3 = document.getElementsByClassName("animated-icons3");
+            for (let i = 0; i < animatedIcons2.length; i++) {
+                animatedIcons2[i].style.visibility = 'visible';
+            }
+            for (let i = 0; i < animatedIcons3.length; i++) {
+                animatedIcons3[i].style.visibility = 'visible';
+            }
+            animatedIcons1[0].style.visibility = 'visible';
         }
+         
     );
