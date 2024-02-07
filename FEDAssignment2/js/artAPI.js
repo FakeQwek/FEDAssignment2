@@ -4,6 +4,14 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["Art", "Software and Game Development", "Food & Drink", "Makers & Crafting", "Beauty & Body Art"]
 let userIds = []
 
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1250)
+    }
+
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",
     headers: {
@@ -48,6 +56,7 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
                             </div>
                         </button>`
             el.insertAdjacentHTML("beforeend", html)
+            FinishLoading();
         }
     })
 })
