@@ -90,6 +90,7 @@ html, body {
     height: 100vh;
 }
 
+
 /* classes to set widths */
 
 .width-25 {
@@ -432,11 +433,11 @@ button:hover {
     }
 
     .sm-font-28 {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .sm-margin-s48 {
-        margin-left: 16px;
+        margin-left: 0px;
     }
 
     .sm-column {
@@ -449,6 +450,10 @@ button:hover {
 
     .sm-w75-100 {
         width: 100%;
+    }
+
+    .sm-w100 {
+        width: 100vw;
     }
     
 }
