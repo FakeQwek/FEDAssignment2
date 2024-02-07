@@ -135,8 +135,6 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
         }
        }
       
-        
-    
      FinishLoading();
     }
   })

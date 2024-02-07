@@ -133,6 +133,8 @@ html, body {
 .s-w75-100 {
     width: 75%;
 }
+
+
 /* classes to set positions */
 
 .align-center {
@@ -154,8 +156,6 @@ html, body {
     align-items: flex-end;
 }
 
-
-
 .margin-left-40 {
     margin-left: 320px;
 }
@@ -167,7 +167,9 @@ html, body {
     margin-left: 48px;
 }
 
-
+.padding-bottom-5per{
+    padding-bottom: 5%;
+}
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
@@ -182,6 +184,10 @@ html, body {
 
 .padding-top-2per {
     padding-top: 2%;
+}
+
+.margin-top-6per {
+    margin-top: 6%;
 }
 
 .padding-left-2per{
@@ -200,6 +206,10 @@ html, body {
     padding-left: 15% !important;
 }
 
+.padding-bottom-2per {
+    padding-bottom: 2%;
+}
+
 .margin-left-15per {
     margin-left: 15% !important;
 }
@@ -212,6 +222,8 @@ html, body {
 .padding-left-20per {
     padding-left: 20%;
 }
+
+
 /* design related classes */
 
 .display-none {
@@ -258,9 +270,16 @@ input[type="search"]::-webkit-search-cancel-button {
     display: none;
   }
 
+
+footer {
+   padding-top: 3%;
+}
 /* animation classes */
 
 
+.category-text:hover {
+    background-color: lightgray;
+}
 
 .stats:hover {
     color: lightgray;
