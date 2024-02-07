@@ -13,7 +13,7 @@
 <body>
   <!-- creating the lottie animations that will be used for this page -->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
+  <dotlottie-player class="loading background-white" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="transparent" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
   <dotlottie-player id ="transition" class="animated-quiz display-none"src="https://lottie.host/4ca29905-98ee-422f-99f6-b7a869611c8d/WQl0d7YkpR.json" background="transparent" speed="0.2" direction = "-1" autoplay></dotlottie-player>
    
   <nav class="navbar navbar-expand-lg bg-white">
@@ -104,9 +104,37 @@
   </main>
 
   <!-- footer -->
-  <footer>
-    <div class="height-400"></div>
-  </footer>
+  
+  <footer class="height-200 container-fluid bg-5c16c5 padding-bottom-2per">
+    <div class="d-flex justify-content-evenly flex-row flex-wrap footer-segment footer-container">
+      <div class="d-flex flex-column">
+        <h2 class="text-white padding-bottom-5per padding-top-2per">Contact Us</h2>
+        <div>
+          <h6 class="text-white">twitchstatssupport@gmail.com</h5>
+          <h6 class="text-white padding-bottom-5per">+65 9899 2002</h5>
+          <p class="text-white">We will get back to you within 3 business days<p>
+        </div>
+      </div>
+      <div class="d-flex flex-column">
+        <h2 class="text-white padding-bottom-5per padding-top-2per footer-segment">Follow Us</h2>
+        <div class="d-flex flex-row ">
+          <a href="https://www.youtube.com/">
+            <img src="./images/youtube-icon.png" class="img-fluid width-40per">
+          </a>
+          <a href="https://www.linkedin.com/mynetwork/">
+            <img src="./images/linkedin-icon.png" class="img-fluid width-40per">
+          </a>
+          <a href="https://www.instagram.com/">
+            <img src="./images/instagram-icon.png" class="img-fluid width-40per">
+          </a>
+          <a href="https://www.facebook.com/">
+            <img src="./images/facebook-icon.png" class="img-fluid width-40per ">
+          </a>
+        </div>
+      </div>
+    </div>
+</footer>
+
 
 
     <script src="./js/quizAPI.js"></script>
