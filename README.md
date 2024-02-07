@@ -9,7 +9,8 @@ The TwitchStats website will provide Twitch viewers and content creators with us
 * As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends. You will be able to view other channels in different categories and look at popular games to glean important information that can be used to improve your streams
 
 [Design Plan](https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1)
-[Github Pages Deployment:](https://fakeqwek.github.io/FEDAssignment2/)
+
+[Github Pages Deployment](https://fakeqwek.github.io/FEDAssignment2/)
 
 ## Features
 
