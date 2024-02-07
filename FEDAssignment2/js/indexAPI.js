@@ -384,46 +384,46 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
         })
 
     let carousel1 = document.getElementById("carousel1");
-    let carousel1HTML = `<div class="col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60">
+    let carousel1HTML = `<a href="./games.html" class="col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Games</h1>
                             </div>
                             <div class="col">
                                 <img src="./images/twitch-controller.png" class="height-100 animated-icons">
                             </div>
-                        </div>
-                        <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
+                        </a>
+                        <a href="./irl.html" class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">IRL</h1>
                             </div>
                             <div class="col">
                                 <img src="./images/twitch-mic.png" class="height-100 animated-icons2">
                             </div>
-                        </div>
-                        <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
+                        </a>
+                        <a href="./music.html" class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Music</h1>
                             </div>
                             <div class="col">
                                 <img src="./images/twtich-headset.png" class="height-100 animated-icons3">
                             </div>
-                        </div>
-                        <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
+                        </a>
+                        <a href="./esports.html" class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Esports</h1>
                             </div>
                             <div class="col">
                                 <img src="./images/twtich-trophy.png" class="height-100 animated-icons2">
                             </div>
-                        </div>
-                        <div class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60">
+                        </a>
+                        <a href="./art.html" class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Art</h1>
                             </div>
                             <div class="col">
                                 <img src="./images/twitch-art.png" class="height-100 animated-icons3">
                             </div>
-                        </div>`
+                        </a>`
 
 
 

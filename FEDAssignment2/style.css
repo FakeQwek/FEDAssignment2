@@ -25,7 +25,6 @@ html, body {
 }
 
 
-
 /* classes to set fonts */
 .inter-tight {
     font-family: "Inter-Tight";
@@ -89,6 +88,7 @@ html, body {
 .sm-vh100-200 {
     height: 100vh;
 }
+
 
 /* classes to set widths */
 
@@ -228,6 +228,10 @@ html, body {
     height: 100vh;
    
     
+}
+
+.sm-noscroll {
+    overflow-y: hidden;
 }
 
 .circle {
@@ -432,11 +436,11 @@ button:hover {
     }
 
     .sm-font-28 {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     .sm-margin-s48 {
-        margin-left: 16px;
+        margin-left: 0px;
     }
 
     .sm-column {
@@ -449,6 +453,14 @@ button:hover {
 
     .sm-w75-100 {
         width: 100%;
+    }
+
+    .sm-w100 {
+        width: 100vw;
+    }
+
+    .sm-noscroll {
+        overflow-y: scroll;
     }
     
 }
