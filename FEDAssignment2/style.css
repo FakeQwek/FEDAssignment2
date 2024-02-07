@@ -93,6 +93,10 @@ html, body {
     height: 100vh;
 }
 
+.sm-vh100-150 {
+    height: 100vh;
+}
+
 
 /* classes to set widths */
 
@@ -462,6 +466,10 @@ button:hover {
 @media only screen and (max-width: 768px) {
     .sm-vh100-200 {
         height: 200vh;
+    }
+
+    .sm-vh100-150 {
+        height: 150vh;
     }
     
     .remove {
