@@ -136,6 +136,10 @@ For the website itself:
   * [Animated Twitch Icon](https://lottiefiles.com/animations/twitch-icon-zOeSeJObW4)
   * [Loading Screen](https://lottiefiles.com/animations/loading-purple-G2DwkIDrUS)
   * [Quiz Transition](https://app.lottiefiles.com/animation/4b88f07d-254d-428f-ac79-e650b8bd6dc1?panel=embed)
+  * [Instagram Icon](https://www.iconfinder.com/icons/1298747/instagram_brand_logo_social_media_icon)
+  * [Facebook Icon](https://www.iconfinder.com/icons/317727/facebook_social_media_social_icon)
+  * [Youtube Icon](https://www.iconfinder.com/search?q=youtube&price=free&category=social-media&ref=buffer.com)
+  * [LinkedIn Icon](https://www.iconfinder.com/search/icons?price=free&category=social-media&q=social+media&ref=buffer.com)
 
 
 
