@@ -12,7 +12,7 @@
 <body>
 
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-  <dotlottie-player id ="transition" class="animated-quiz display-none"src="https://lottie.host/4ca29905-98ee-422f-99f6-b7a869611c8d/WQl0d7YkpR.json" background="transparent" speed="0.2" direction = "-1" autoplay></dotlottie-player>
+  <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="white" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
       <a href="./index.html" >
@@ -25,8 +25,6 @@
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Nav Bar</h5>
           <button type="button" class="btn-close btn-close white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-
-
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav flex-grow-1 pe-3">
@@ -34,7 +32,10 @@
               <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./games.html">Games</a>
+            </li>
+            <li class="nav-item align-center">
+              <a class="nav-link inter-tight-bold ms-4" href="./categories.html">Categories</a>
             </li>
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./quiz.html">Twitch Quiz</a>
@@ -67,6 +68,7 @@
       </div>
     </div>
   </nav>
+
               
 
     <!-- main -->
@@ -86,7 +88,7 @@
       <div class="height-400"></div>
     </footer>
 
-
+    <script src="./js/loading.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
