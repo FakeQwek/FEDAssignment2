@@ -67,6 +67,10 @@ html, body {
     background-color: #E5E5E5;
 }
 
+.white {
+    color: white;
+}
+
 /* classes to set heights */
 
 .height-400 {
@@ -150,6 +154,8 @@ html, body {
     align-items: flex-end;
 }
 
+
+
 .margin-left-40 {
     margin-left: 320px;
 }
@@ -160,6 +166,8 @@ html, body {
 .sm-margin-s48 {
     margin-left: 48px;
 }
+
+
 
 .carousel-inner .carousel-item.active,
 .carousel-inner .carousel-item-next,
@@ -196,6 +204,14 @@ html, body {
     margin-left: 15% !important;
 }
 
+.sticky {
+    position: sticky !important;
+    top: 0;
+}
+
+.padding-left-20per {
+    padding-left: 20%;
+}
 /* design related classes */
 
 .display-none {
