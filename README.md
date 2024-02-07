@@ -5,8 +5,8 @@
 ## Design Goals
 
 The TwitchStats website will provide Twitch viewers and content creators with useful statistics that aid both the viewing and streaming experience 
-* As a Twitch viewer, you are able to view clips and find out about the most popular games and channels currently being streamed on twitch
-* As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends
+* As a Twitch viewer, you are able to look at channels and the various categories to find out about the most popular games and channels currently being streamed on twitch. You may also participate in the Twitch Quiz to test your knowledge!
+* As a Twitch content creator, you will be able to tailor your content to fit the biggest and newest trends. You will be able to view other channels in different categories and look at popular games to glean important information that can be used to improve your streams
 
 Design plan url: [Design Plan](https://www.figma.com/file/TxbTPwvWMeF9MKjcFsVRGl/Untitled?type=design&node-id=0%3A1&mode=design&t=k9VIUFmLJfjReiob-1)
 
@@ -24,17 +24,22 @@ The TwitchStats Website will include the following features:
 9. Animations to capture user attention
  
 ### Existing Features
-- Sign up/Login page that stores user login credentials in a database 90%
-- Homepage that shows general statistics as well different top live channels 90%
-- Navigation bar to switch between the different pages 95%
-- Twitch Quiz that fetches from Twitch Api 70%
-- Channels page with popular twitch channels 80%
-- Games page with popular games 80%
-- Clips page with viewable clips 80%
-  
+- Sign up/Login page that stores user login credentials in a database 100%
+- Homepage that shows general statistics as the top live channels and top Twitch categories overall 100%
+- Navigation bar to switch between the different pages 100%
+- Twitch Quiz that fetches questions from the Twitch Api 100%
+- Categories page with icons of the most popular games 100%
+- Games page with popular game channels 100%
+- Irl page with popular channels under the IRL category 80%
+- Music page with popular channels under the Music category 50%
+- Esports page with popular channels under the Esports category 80%
+- Art page with popular channels under the Art category 50%
+- Search feature to search for a desired channel 100%
+- Animation and other interactive features for user engagement 80%
+- Individual channel page for detailed view of specific channel related information 100%
 
 ### Features Left to Implement
-- Animation to capture user attention
+- None
 
   
 
@@ -73,27 +78,46 @@ The TwitchStats Website will include the following features:
 1. Browse homepage:
     1. Go to the Homepage
     2. Observe twitch statistics and view Top games and channels
+
 2. Login to TwitchStats:
     1. Click on login button on top right of the navigation bar
     2. Enter user credentials
     3. Login
+
 3. Sign Up for an account on TwitchStats:
     1. Click on the signup button on top right of the navigation bar
     2. Enter user credentials
     3. Sign up complete
+
 4. Search for a specific Twitch channel:
     1. Enter into input box on the navigation bar
     2. Type in channel to search for on TwitchStats
     3. Click the search button
-    4. Find the channel 
+    4. Find the channel
+    5. Click on channel to view more detailed information
+
+5. Browse either the Games/Irl/Music/Esports/Art category of top live channels
+    1. Go to the Homepage
+    2. Click on 1 of 5 of the icons to navigate to the respective channels page
+    3. View top live channel of the respective category
+
+6. Browse the categories page
+    1. Click on the categories button in the nav bar
+    2. Browse the different game categories on Twitch
+
+7. Try the Twitch quiz
+    1. Click on the Twitch Quiz button on the nav bar
+    2. Begin the quiz by pressing the start button
+    3. Answer each question in the quiz
+       
 
 ## Responsiveness:
 
-All pages responsive
+Newer pages are not responsive yet
 
 ## Bugs and Issues: 
 
-Channels seem to not link to their buttons correctly
+~~Channels seem to not link to their buttons correctly~~
 
 ## Credits
 
@@ -110,6 +134,7 @@ For the website itself:
   * [Twitch Icons](https://www.twitch.tv/)
   * [Animated Twitch Icon](https://lottiefiles.com/animations/twitch-icon-zOeSeJObW4)
   * [Loading Screen](https://lottiefiles.com/animations/loading-purple-G2DwkIDrUS)
+  * [Quiz Transition](https://app.lottiefiles.com/animation/4b88f07d-254d-428f-ac79-e650b8bd6dc1?panel=embed)
 
 
 
