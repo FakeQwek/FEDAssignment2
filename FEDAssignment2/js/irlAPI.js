@@ -1,9 +1,8 @@
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 let getUsers = "https://api.twitch.tv/helix/users?id=";
-let gameList = ["Teamfight Tactics", "Legaue of Legends", "Palworld", "VALORANT", "Counter-Strike", "Fortnite", "Grand Theft Auto V", "Apex Legends"]
+let gameList = ["Just Chatting", "Pools, Hot Tubs, and Beaches", "Sports", "Talk Shows & Podcasts", "ASMR", "Fitness & Health", "Travel & Outdoors", "Animals, Aquariums, and Zoos"]
 let userIds = []
-
 
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",

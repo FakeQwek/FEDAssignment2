@@ -25,7 +25,6 @@ html, body {
 }
 
 
-
 /* classes to set fonts */
 .inter-tight {
     font-family: "Inter-Tight";
@@ -229,6 +228,10 @@ html, body {
     height: 100vh;
    
     
+}
+
+.sm-noscroll {
+    overflow-y: hidden;
 }
 
 .circle {
@@ -454,6 +457,10 @@ button:hover {
 
     .sm-w100 {
         width: 100vw;
+    }
+
+    .sm-noscroll {
+        overflow-y: scroll;
     }
     
 }
