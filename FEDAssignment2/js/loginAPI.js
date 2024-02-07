@@ -1,6 +1,20 @@
 let el = document.getElementById("login");
 
+
 //gets the inputs for username and password and checks if the data is in the database
+
+
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 500)
+}
+  
+
+
+FinishLoading();
 function submit() {
     let username = document.getElementById("username").value;
 
@@ -28,7 +42,7 @@ function submit() {
             }
         }
     })
-
+  
 }
 
 el.addEventListener("click", submit);

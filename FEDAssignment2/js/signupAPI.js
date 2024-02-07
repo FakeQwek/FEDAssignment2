@@ -1,5 +1,14 @@
 let el = document.getElementById("signup");
 
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 500)
+}
+  
+FinishLoading();
 function submit() {
     let username = document.getElementById("username");
 
@@ -23,5 +32,6 @@ function submit() {
         return response.json();
     })
 }
+
 
 el.addEventListener("click", submit);

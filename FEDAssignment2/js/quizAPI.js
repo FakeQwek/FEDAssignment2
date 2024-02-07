@@ -2,9 +2,34 @@
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
+
 //clears local storage and then sets score item with value 0
+
+
+
+
+
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+  
+  function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1250)
+    }
+  
+
 localStorage.clear();
 localStorage.setItem("score", 0);
+FinishLoading();
+
 
 function TransitionAnimation() {
     const animation = document.querySelector("#transition"); 

@@ -1,3 +1,23 @@
+
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+  
+  function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1250)
+    }
+  
+
+
+
 let currScore = localStorage.getItem("score")
 if (currScore > 9) {
     currScore = 9;
@@ -71,3 +91,4 @@ fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
             })
         }
     })
+    FinishLoading();
