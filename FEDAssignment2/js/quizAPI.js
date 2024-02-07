@@ -750,6 +750,8 @@ function qn9() {
             const wrong = el => {
                 TransitionAnimation();
                 setTimeout(quizEnd(), 4000);
+                finish();
+
             }
            
         })
@@ -761,5 +763,6 @@ function quizEnd() {
   location.replace("./quiz-end.html");
 }
 
-
-
+function finish() {
+    location.href = "./quiz-end.html"
+}
