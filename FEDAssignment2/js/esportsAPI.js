@@ -4,6 +4,14 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["League of Legends", "VALORANT", "Fortnite", "Apex Legends", "Counter Strike", "Call of Duty: Warzone", "World of Warcraft", "Dota 2"]
 let userIds = []
 
+function FinishLoading() {
+    setTimeout(function(){
+        const loader = document.querySelector(".loading");
+        loader.remove();
+        
+       }, 1250)
+    }
+
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",
     headers: {
@@ -25,6 +33,7 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
     }
 
     getUsers = getUsers.slice(0,-4);
+
     if (getUsers != "https://api.twitch.tv/helix/users") {
         fetch(getUsers, {
             method: "GET",
@@ -49,9 +58,11 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
                                 </div>
                             </button>`
                 el.insertAdjacentHTML("beforeend", html)
+              FinishLoading();
             }
         })
     }
+
 })
 
 let reload = document.getElementById("reload");
