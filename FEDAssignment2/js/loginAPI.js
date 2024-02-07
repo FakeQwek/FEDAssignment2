@@ -4,6 +4,14 @@ let el = document.getElementById("login");
 //gets the inputs for username and password and checks if the data is in the database
 
 
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");

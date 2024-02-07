@@ -4,6 +4,15 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["Just Chatting", "Pools, Hot Tubs, and Beaches", "Sports", "Talk Shows & Podcasts", "ASMR", "Fitness & Health", "Travel & Outdoors", "Animals, Aquariums, and Zoos"]
 let userIds = []
 
+
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
