@@ -67,6 +67,10 @@ html, body {
     background-color: #E5E5E5;
 }
 
+.white {
+    color: white;
+}
+
 /* classes to set heights */
 
 .height-400 {
@@ -98,6 +102,10 @@ html, body {
 
 .width-25 {
     width: 30px;
+}
+
+.width-10per {
+    width: 10%;
 }
 
 .width-100 {
@@ -133,6 +141,12 @@ html, body {
 .s-w75-100 {
     width: 75%;
 }
+
+.width-40per {
+    width: 40%;
+}
+
+
 /* classes to set positions */
 
 .align-center {
@@ -154,6 +168,10 @@ html, body {
     align-items: flex-end;
 }
 
+.margin-top-1per {
+    margin-top: 1%;
+}
+
 .margin-left-40 {
     margin-left: 320px;
 }
@@ -163,6 +181,10 @@ html, body {
 
 .sm-margin-s48 {
     margin-left: 48px;
+}
+
+.padding-bottom-5per{
+    padding-bottom: 5%;
 }
 
 .carousel-inner .carousel-item.active,
@@ -178,6 +200,10 @@ html, body {
 
 .padding-top-2per {
     padding-top: 2%;
+}
+
+.margin-top-6per {
+    margin-top: 6%;
 }
 
 .padding-left-2per{
@@ -196,10 +222,26 @@ html, body {
     padding-left: 15% !important;
 }
 
+.padding-bottom-2per {
+    padding-bottom: 2%;
+}
+
 .margin-left-15per {
     margin-left: 15% !important;
 }
 
+.sticky {
+    position: sticky !important;
+    top: 0;
+}
+
+.padding-left-20per {
+    padding-left: 20%;
+}
+
+.margin-left-5per {
+    margin-left: 5%;
+}
 /* design related classes */
 
 .display-none {
@@ -246,9 +288,20 @@ input[type="search"]::-webkit-search-cancel-button {
     display: none;
   }
 
+
+footer {
+   padding-top: 3%;
+}
+
+
+
+
 /* animation classes */
 
 
+.category-text:hover {
+    background-color: lightgray;
+}
 
 .stats:hover {
     color: lightgray;
@@ -473,6 +526,25 @@ button:hover {
     
 }
 
+/* Makes the footer responsive */
+
+@media only screen and (max-width: 877px) {
+    .justify-content-evenly {
+        justify-content: start !important;
+    }
+
+    footer h2 {
+        font-size: 100%;
+    }
+
+    footer h6 {
+        font-size: 100%;
+    }
+
+    footer p {
+        font-size: 100%;
+    }
+}
 
 
 

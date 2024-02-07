@@ -16,18 +16,26 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let getGames = "https://api.twitch.tv/helix/games/top?first=12";
 let getChannel = "https://api.twitch.tv/helix/channels?id=";
 
-//clears local storage on page load
-localStorage.clear();
+//clears local storage on page load 
+localStorage.clear(); 
+
+
+
+
+
+
 
 //removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
         loader.remove();
+        let animatedIcons1 = document.getElementsByClassName("animated-icons");
+        let animatedIcons2 = document.getElementsByClassName("animated-icons2");
+        let animatedIcons3 = document.getElementsByClassName("animated-icons3");
+        
         const icon = document.querySelector(".animated-twitch");
-        const animatedIcons1 = document.getElementsByClassName("animated-icons");
-        const animatedIcons2 = document.getElementsByClassName("animated-icons2");
-        const animatedIcons3 = document.getElementsByClassName("animated-icons3");
+        
         icon.style.visibility='visible';
         for (let i = 0; i < animatedIcons2.length; i++) {
             animatedIcons2[i].style.visibility = 'visible';
@@ -36,7 +44,7 @@ function FinishLoading() {
             animatedIcons3[i].style.visibility = 'visible';
         }
         animatedIcons1[0].style.visibility = 'visible';
-       
+        console.log("Load done");
        }, 850)
   }
 
@@ -384,7 +392,7 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
         })
 
     let carousel1 = document.getElementById("carousel1");
-    let carousel1HTML = `<a href="./games.html" class="col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
+    let carousel1HTML = `<a href="./games.html" class="category-text col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Games</h1>
                             </div>
@@ -392,7 +400,7 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                                 <img src="./images/twitch-controller.png" class="height-100 animated-icons">
                             </div>
                         </a>
-                        <a href="./irl.html" class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
+                        <a href="./irl.html" class="category-text col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">IRL</h1>
                             </div>
@@ -400,7 +408,7 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                                 <img src="./images/twitch-mic.png" class="height-100 animated-icons2">
                             </div>
                         </a>
-                        <a href="./music.html" class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
+                        <a href="./music.html" class="category-text col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Music</h1>
                             </div>
@@ -408,7 +416,7 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                                 <img src="./images/twtich-headset.png" class="height-100 animated-icons3">
                             </div>
                         </a>
-                        <a href="./esports.html" class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
+                        <a href="./esports.html" class="category-text col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Esports</h1>
                             </div>
@@ -416,7 +424,7 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                                 <img src="./images/twtich-trophy.png" class="height-100 animated-icons2">
                             </div>
                         </a>
-                        <a href="./art.html" class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
+                        <a href="./art.html" class="category-text col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60" style="text-decoration: none;">
                             <div class="container-fluid">
                                 <h1 class="text-white">Art</h1>
                             </div>
@@ -482,22 +490,37 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
                                         </div>
                                     </div>
                                 </div>
-                            </div>`;
+                            </div>`
 
     if (mql.matches) {
         carousel1.innerHTML = mobileCarousel1;
+        
     }
     else {
         carousel1.innerHTML = carousel1HTML;
+        
     }
 
     mql.addListener(
         function(mq) {
             if (mq.matches) {
                 carousel1.innerHTML = mobileCarousel1;
+              
             } 
             else {
                 carousel1.innerHTML = carousel1HTML;
+                
             }
+            let animatedIcons1 = document.getElementsByClassName("animated-icons");
+            let animatedIcons2 = document.getElementsByClassName("animated-icons2");
+            let animatedIcons3 = document.getElementsByClassName("animated-icons3");
+            for (let i = 0; i < animatedIcons2.length; i++) {
+                animatedIcons2[i].style.visibility = 'visible';
+            }
+            for (let i = 0; i < animatedIcons3.length; i++) {
+                animatedIcons3[i].style.visibility = 'visible';
+            }
+            animatedIcons1[0].style.visibility = 'visible';
         }
+         
     );
