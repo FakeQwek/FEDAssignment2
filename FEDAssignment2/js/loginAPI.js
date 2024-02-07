@@ -37,9 +37,6 @@ function submit() {
             if (data[i].username == username && data[i].password == password) {
                 location.href = "./index.html"
             }
-            else {
-                console.log("wrong pass")
-            }
         }
     })
   
