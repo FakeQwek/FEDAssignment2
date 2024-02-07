@@ -33,32 +33,36 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
     }
 
     getUsers = getUsers.slice(0,-4);
-    fetch(getUsers, {
-        method: "GET",
-        headers: {
-            "Client-ID": clientId,
-            "Authorization": "Bearer " + oAuth
-        }
-    })
-    .then(response => {
-        return response.json();
-    })
-    .then(data2 => {
-        for (let i = 0; i < userIds.length; i++) {
-            let el = document.getElementById("channels");
-            let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
-                            <div class="d-flex flex-row my-3 align-items-center">
-                                <img src="` + data2.data[i].profile_image_url + `" class="rounded-circle max-width-100">
-                                    <div class="d-flex flex-column">
-                                        <div class="ms-4 font-32 d-flex sm-font-28">` + data2.data[i].display_name + `</div>
-                                    </div>
-                                <div class="font-24 d-flex flex-fill justify-content-end sm-font-16">` + data.data[userIds[i]].viewer_count + `</div>
-                            </div>
-                        </button>`
-            el.insertAdjacentHTML("beforeend", html)
-            FinishLoading();
-        }
-    })
+
+    if (getUsers != "https://api.twitch.tv/helix/users") {
+        fetch(getUsers, {
+            method: "GET",
+            headers: {
+                "Client-ID": clientId,
+                "Authorization": "Bearer " + oAuth
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data2 => {
+            for (let i = 0; i < userIds.length; i++) {
+                let el = document.getElementById("channels");
+                let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
+                                <div class="d-flex flex-row my-3 align-items-center">
+                                    <img src="` + data2.data[i].profile_image_url + `" class="rounded-circle max-width-100">
+                                        <div class="d-flex flex-column">
+                                            <div class="ms-4 font-32 d-flex sm-font-28">` + data2.data[i].display_name + `</div>
+                                        </div>
+                                    <div class="font-24 d-flex flex-fill justify-content-end sm-font-16">` + data.data[userIds[i]].viewer_count + `</div>
+                                </div>
+                            </button>`
+                el.insertAdjacentHTML("beforeend", html)
+              FinishLoading();
+            }
+        })
+    }
+
 })
 
 let reload = document.getElementById("reload");
