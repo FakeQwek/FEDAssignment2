@@ -681,16 +681,16 @@ function qn9() {
                 let currScore = localStorage.getItem("score")
 
                 localStorage.setItem("score", ++currScore);
-                qn10();
+                finish();
             }
 
             const wrong = el => {
-                qn10();
+                finish();
             }
         })
     })
 }
 
 function finish() {
-    
+    location.href = "./quiz-end.html"
 }

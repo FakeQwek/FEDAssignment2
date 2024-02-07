@@ -7,6 +7,11 @@ let jsondata = {
     "score": currScore
 }
 
+let score = document.getElementById("score");
+
+score.innerHTML = `<h1 class="font-100 mb-5 px-5">You scored ` + currScore + `/9</h1>
+                   <h2 class="mb-5 px-4">You are the GOAT of all time</h2>
+                   <button id="next" class="btn btn-outline-dark">To Scores</button>`
 
 fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
     method: "POST",
