@@ -48,7 +48,7 @@ The TwitchStats Website will include the following features:
 ## Technologies Used
 
 - [Figma](https://www.figma.com/)
-    - The project uses **Figma** to create the initial wireframe design of the online CASIO shop.
+    - The project uses **Figma** to create the initial wireframe design of the TwtichStats website.
 
 - [Visual Studio Code](https://code.visualstudio.com/)
     - The project uses **Visual Studio Code** to develop the website with html, css and javascript
@@ -111,6 +111,11 @@ The TwitchStats Website will include the following features:
     1. Click on the Twitch Quiz button on the nav bar
     2. Begin the quiz by pressing the start button
     3. Answer each question in the quiz
+
+8. Try the Twitch Hangman
+    1. Click on the Twitch Hangman button on the nav bar
+    2. Begin the game by clicking on the letters
+    3. When you get it right the button will be enabled
        
 
 ## Responsiveness:
