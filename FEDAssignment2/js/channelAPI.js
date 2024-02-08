@@ -117,7 +117,7 @@ for (let i = 0; i < 100; i++) {
                 let el = document.getElementById("channel-game");
                 let html = `<img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded ms-3 my-3">`
 
-                el.insertAdjacentHTML("afterbegin", html);
+                el.innerHTML = html;
 
                 let el2 = document.getElementById("game-name");
                 let html2 = `<h1 class="mt-3">` + data.data[0].name + `</h1>`
