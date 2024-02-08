@@ -1,9 +1,15 @@
+//setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
+
+//setting the lists that will be used
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 let regex = /^[a-zA-Z]+$/;
 let string = "";
+let word = document.getElementById("word");
+let tryCount = document.getElementById("tries");
+let next = document.getElementById("next");
 
-
+//getting the html elements for a-z buttons
 let a = document.getElementById("a");
 let b = document.getElementById("b");
 let c = document.getElementById("c");
@@ -31,12 +37,7 @@ let x = document.getElementById("x");
 let y = document.getElementById("y");
 let z = document.getElementById("z");
 
-let word = document.getElementById("word");
-
-let tryCount = document.getElementById("tries");
-
-let next = document.getElementById("next");
-
+//fetching the top 100 current live streams
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",
     headers: {
@@ -56,7 +57,6 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
             string = data.data[i].user_name;
         }
     }
-    console.log(string);
 
     for (let i = 0; i < string.length; i++) {
         if (string[i]) {
@@ -428,10 +428,14 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
     });
 })
 
+
+//check if the word is solved and change the try counter
 function check(count, string, tries) {
     if (count >= string.length) {
         tryCount.innerHTML = `<h2>Tries:</h2>
                           <h2 class="text-center">` + tries + `</h2>`
+
+    //disables all buttons after the word is fully guessed
     a.disabled = true;
     b.disabled = true;
     c.disabled = true;

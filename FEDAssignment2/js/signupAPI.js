@@ -1,9 +1,12 @@
+//gets elements with specific ids from html page
 let el = document.getElementById("signup");
 
 let wrong = document.getElementById("wrong");
 
+//clears local storage
 localStorage.clear();
 
+//removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -11,8 +14,10 @@ function FinishLoading() {
         
        }, 500)
 }
-  
+
 FinishLoading();
+
+//function to POST the new username and password and shows a response after the account is created
 function submit() {
     let username = document.getElementById("username");
 
@@ -39,5 +44,5 @@ function submit() {
     wrong.classList.add("text-success");
 }
 
-
+//gives the sign up button the submit function
 el.addEventListener("click", submit);

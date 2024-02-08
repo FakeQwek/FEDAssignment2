@@ -1,4 +1,4 @@
-
+//gets the value from the search container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -6,7 +6,7 @@ function Search() {
     return false;
   }
   
-  
+  //removes the lottie animation after the data from the API is done being called
   function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -17,11 +17,13 @@ function Search() {
   
 
 
-
+//sets score to max score if score is above 9
 let currScore = localStorage.getItem("score")
 if (currScore > 9) {
     currScore = 9;
 }
+
+//sets jsondata to be POST
 let jsondata = {
     "username": localStorage.getItem("username"),
     "score": currScore
@@ -33,6 +35,7 @@ score.innerHTML = `<h1 class="font-100 mb-5 px-5">You scored ` + currScore + `/9
                    <h2 class="mb-5 px-4">You are the GOAT of all time</h2>
                    <button id="next" class="btn btn-outline-dark">To Scores</button>`
 
+//POST jsondata to restdb
 fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
     method: "POST",
     headers: {
@@ -46,6 +49,7 @@ fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
         return response.json();
     })
 
+//GET jsondata from restdb to print out the leaderboard
 fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
     method: "GET",
     headers: {
@@ -66,6 +70,7 @@ fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
             length = data.length;
         }
 
+        //displays the elements for the leaderboard
         for (let i = 0; i < length; i++) {
             let next = document.getElementById("next");
             next.addEventListener("click", func => {

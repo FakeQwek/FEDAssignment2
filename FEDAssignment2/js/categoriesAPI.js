@@ -1,7 +1,9 @@
+//setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 let getGames = "https://api.twitch.tv/helix/games/top?first=100";
 
+//gets the value from the search container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -9,7 +11,7 @@ function Search() {
     return false;
   }
   
-  
+  //removes the lottie animation after the data from the API is done being called
   function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -18,7 +20,7 @@ function Search() {
        }, 1250)
     }
   
-
+//fetching the current top categories
 fetch(getGames, {
     method: "GET",
     headers: {

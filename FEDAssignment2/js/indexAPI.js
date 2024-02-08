@@ -35,7 +35,6 @@ function FinishLoading() {
             animatedIcons3[i].style.visibility = 'visible';
         }
         animatedIcons1[0].style.visibility = 'visible';
-        console.log("Load done");
        }, 850)
   }
 
@@ -83,8 +82,7 @@ function liveUser(array) {
             let el3 = document.getElementById("live-channels2");
             json.data.forEach(element => {
                 let user = json.data[index];
-                console.log("User is" + user);
-                
+
                 for (let j = 0; j < array.length; j++) {
                     if (json.data[j].id == userIds[index]) {
                         position = j;
@@ -199,7 +197,6 @@ function getTopGames() {
     //creates and adds the html for carousel of the top games being played
     .then(data => {
         mql = window.matchMedia("only screen and (max-width: 768px)");
-        console.log(data);
         let el = document.getElementById("top-games");
 
         let mobileCarousel2 = `<div class="carousel-item active">
@@ -289,7 +286,7 @@ function getTopGames() {
     })
 }
 
-//gets the value from the searh container and adds it to local storage
+//gets the value from the search container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -316,7 +313,6 @@ function getClips(array) {
         return response.json();
     })
     .then(data => {
-        //console.log(data.data[0]);
         let el = document.getElementById("top-clips");
         let html = `<iframe src="` + data.data[0].embed_url + `&parent=127.0.0.1:5500/index.html">`
 
@@ -340,7 +336,6 @@ fetch("https://api.twitch.tv/helix/streams?first=18 ", {
 
         //adds data to their respective lists
         for (let i = 0; i < data.data.length; i++) {
-            console.log(data.data[0].started_at)
             viewerCount.push(data.data[i].viewer_count);
             userIds.push(data.data[i].user_id);
             userNames.push(data.data[i].user_name);

@@ -1,18 +1,12 @@
+//gets elements with specific ids from html page
 let el = document.getElementById("login");
+  
+let wrong = document.getElementById("wrong");
 
+//clears local storage
 localStorage.clear();
 
-//gets the inputs for username and password and checks if the data is in the database
-
-
-function Search() {
-    const searchQuery = document.querySelector(".form-control").value;
-    localStorage.setItem("Search", searchQuery);
-    window.location.href="./search.html";
-    return false;
-  }
-  
-
+//removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -20,10 +14,9 @@ function FinishLoading() {
         
        }, 500)
 }
-  
-let wrong = document.getElementById("wrong");
 
 
+//gets the inputs for username and password and checks if the data is in the database
 FinishLoading();
 function submit() {
     let username = document.getElementById("username").value;
@@ -50,6 +43,7 @@ function submit() {
                 break;
             }
             else {
+                //shows a WRONG response when the username or password is wrong
                 wrong.classList.remove("text-white");
                 wrong.classList.add("text-danger");
             }
@@ -58,4 +52,5 @@ function submit() {
   
 }
 
+//gives the log in button the submit function
 el.addEventListener("click", submit);

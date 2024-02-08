@@ -9,7 +9,7 @@ FinishLoading();
 
 
 
-
+//gets the value from the search container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -17,7 +17,7 @@ function Search() {
     return false;
   }
   
-  
+//removes the lottie animation after the data from the API is done being called
   function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -42,7 +42,7 @@ function TransitionAnimation() {
   
 }
 
-
+//fetching the top current live streams
 fetch("https://api.twitch.tv/helix/streams?first=5", {
     method: "GET",
     headers: {
@@ -172,19 +172,17 @@ function qn2() {
             let currScore = localStorage.getItem("score")
 
             localStorage.setItem("score", ++currScore);
-            console.log("test");
             TransitionAnimation();
             setTimeout(qn3(), 4000);
         
         }
 
         const wrong = el => {
-            console.log("test");
             TransitionAnimation();
             setTimeout(qn3(), 4000);
         }
         
-        
+        //responsiveness for question 2
         let pageEl = document.getElementById("page");
         var mql = window.matchMedia("only screen and (max-width: 768px)");
         if (mql.matches) {
@@ -232,6 +230,8 @@ function qn2() {
 
 //question 3
 function qn3() {
+
+    //fetching current top category
     fetch("https://api.twitch.tv/helix/games/top?first=1", {
         method: "GET",
         headers: {
@@ -243,6 +243,8 @@ function qn3() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop and mobile display
         let gameName = data.data[0].name.toLowerCase();
         
         let page = `<div class="d-flex justify-content-center flex-column">
@@ -273,6 +275,7 @@ function qn3() {
                             <button id="submit" class="btn text-white border-0">Submit</button>
                           </div>`
 
+        //responsiveness for question 3
         let pageEl = document.getElementById("page");
         var mql = window.matchMedia("only screen and (max-width: 768px)");
         if (mql.matches) {
@@ -344,7 +347,10 @@ function qn3() {
     })
 }
 
+//question 4
 function qn4() {
+
+    //fetching current top live stream
     fetch("https://api.twitch.tv/helix/streams?first=1", {
         method: "GET",
         headers: {
@@ -368,6 +374,8 @@ function qn4() {
             return response.json();
         })
         .then(data => {
+
+            //creates the html for the laptop and mobile display
             let userName = data1.data[0].user_name.toLowerCase();
 
             let page = `<div class="d-flex justify-content-center flex-column">
@@ -400,6 +408,8 @@ function qn4() {
                                 <button id="submit" class="btn text-white border-0">Submit</button>
                               </div>`
 
+
+            //responsiveness for question 4
             let pageEl = document.getElementById("page");
             var mql = window.matchMedia("only screen and (max-width: 768px)");
             if (mql.matches) {
@@ -437,7 +447,10 @@ function qn4() {
     })
 }
 
+//question 5
 function qn5() {
+
+    //fetching current top live streams
     fetch("https://api.twitch.tv/helix/streams?first=1", {
         method: "GET",
         headers: {
@@ -449,6 +462,8 @@ function qn5() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop display
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
                         <h1 class="font-100 text-center px-2 w-100 text-white">` + data.data[0].user_name + `'s viewer count is more than 20K</h1>
                         <div class="my-3 d-flex w-75 justify-content-around sm-column">
@@ -496,7 +511,10 @@ function qn5() {
     })
 }
 
+//question 6
 function qn6() {
+
+    //fetching current top live stream
     fetch("https://api.twitch.tv/helix/streams?first=1", {
         method: "GET",
         headers: {
@@ -508,6 +526,8 @@ function qn6() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop display
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
                         <h1 class="font-100 text-center px-2 w-100 text-white">` + data.data[0].user_name + ` streams in english</h1>
                         <div class="my-3 d-flex w-75 justify-content-around sm-column">
@@ -555,7 +575,10 @@ function qn6() {
     })
 }
 
+//question 7
 function qn7() {
+
+    //fetching current top live stream
     fetch("https://api.twitch.tv/helix/streams?first=1", {
         method: "GET",
         headers: {
@@ -567,6 +590,8 @@ function qn7() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop display
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
                         <h1 class="font-100 text-center px-2 w-100 text-white">` + data.data[0].user_name + ` has more than 1M followers</h1>
                         <div class="my-3 d-flex w-75 justify-content-around sm-column">
@@ -626,6 +651,7 @@ function qn7() {
     })
 }
 
+//question 8
 function qn8() {
     fetch("https://api.twitch.tv/helix/streams?first=1", {
         method: "GET",
@@ -638,6 +664,8 @@ function qn8() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop display
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
                         <h1 class="font-100 text-center px-3 w-100 text-white">What month was ` + data.data[0].user_name + ` created in</h1>
                         <div class="d-flex justify-content-center my-3">
@@ -662,7 +690,6 @@ function qn8() {
         .then(data => {
             let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
             let date = Number(data.data[0].created_at.slice(5,7));
-            console.log(date);
 
             let submit = document.getElementById("submit");
             submit.addEventListener("click", func => {
@@ -692,7 +719,10 @@ function qn8() {
     })
 }
 
+//question 9
 function qn9() {
+
+    //fetching current top live stream
     fetch("https://api.twitch.tv/helix/streams?first=1", {
         method: "GET",
         headers: {
@@ -704,6 +734,8 @@ function qn9() {
         return response.json();
     })
     .then(data => {
+
+        //creates the html for the laptop display
         let page = `<div class="d-flex justify-content-center align-items-center flex-column vh-100">
                         <h1 class="font-100 text-center px-3 w-100 text-white">What year was ` + data.data[0].user_name + ` created in</h1>
                         <div class="d-flex justify-content-center my-3">
@@ -760,10 +792,12 @@ function qn9() {
 
 }
  
+//function to go to quiz end page
 function quizEnd() {
   location.replace("./quiz-end.html");
 }
 
+//function to go to quiz end page
 function finish() {
     location.href = "./quiz-end.html"
 }

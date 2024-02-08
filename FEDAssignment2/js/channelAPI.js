@@ -2,7 +2,7 @@
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
-
+//gets the value from the search container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -10,7 +10,7 @@ function Search() {
     return false;
 }
   
-  
+  //removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -19,12 +19,11 @@ function FinishLoading() {
        }, 1350)
 }
 
-
+//checks local storage for key value pair to load channel
 for (let i = 0; i < 100; i++) {
 
     if (JSON.parse(localStorage.getItem(i)) != null) {
         userId = JSON.parse(localStorage.getItem(i));
-        console.log(userId);
         fetch("https://api.twitch.tv/helix/users?id=" + userId, {
             method: "GET",
             headers: {
@@ -36,7 +35,8 @@ for (let i = 0; i < 100; i++) {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+
+            //display data for the channel
             let el = document.getElementById("channel-profile");
             let html = `<img src="` + data.data[0].profile_image_url + `" class="circle max-width-200"></img>`
 
@@ -62,6 +62,7 @@ for (let i = 0; i < 100; i++) {
             el4.innerHTML = html4;
         })
 
+        //fetching the channel user data
         fetch("https://api.twitch.tv/helix/streams?user_id=" + userId, {
             method: "GET",
             headers: {
@@ -73,6 +74,8 @@ for (let i = 0; i < 100; i++) {
             return response.json();
         })
         .then(data => {
+
+            //display data for the channel
             let gameId = data.data[0].game_id;
 
             let el = document.getElementById("channel-title");
@@ -97,6 +100,7 @@ for (let i = 0; i < 100; i++) {
 
             el3.innerHTML = html3;
 
+            //fetching the category the user is streaming
             fetch("https://api.twitch.tv/helix/games?id=" + gameId, {
                 method: "GET",
                 headers: {
@@ -108,6 +112,8 @@ for (let i = 0; i < 100; i++) {
                 return response.json();
             })
             .then(data => {
+
+                //display data for the channel
                 let el = document.getElementById("channel-game");
                 let html = `<img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded ms-3 my-3">`
 
@@ -120,6 +126,7 @@ for (let i = 0; i < 100; i++) {
             })
         })
 
+        //fetching the follower count for the channel
         fetch("https://api.twitch.tv/helix/channels/followers?broadcaster_id=" + userId, {
             method: "GET",
             headers: {
@@ -131,6 +138,8 @@ for (let i = 0; i < 100; i++) {
             return response.json();
         })
         .then(data => {
+
+            //display data for the channel
             let followerCount = document.getElementById("follower-count");
             let html = `<h2 class="channel-stats">` + data.total + `</h2>
                         <h4>Follower Count</h4>`
@@ -149,6 +158,8 @@ for (let i = 0; i < 100; i++) {
             return response.json();
         })
         .then(data => {
+
+            //display data for the channel
             let date = Number(data.data[0].created_at.slice(0,4));
 
             let creationYear = document.getElementById("creation-year");
@@ -170,6 +181,8 @@ for (let i = 0; i < 100; i++) {
             return response.json();
         })
         .then(data => {
+
+            //display data for the channel
             let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
             let date = Number(data.data[0].created_at.slice(5,7));
 
@@ -183,5 +196,3 @@ for (let i = 0; i < 100; i++) {
     }
 }
 FinishLoading();
-
-console.log(userId);
