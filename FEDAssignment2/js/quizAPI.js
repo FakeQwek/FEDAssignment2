@@ -4,7 +4,8 @@ const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 const animation = document.querySelector("#transition"); 
 
 //clears local storage and then sets score item with value 0
-
+localStorage.setItem("score", 0);
+FinishLoading();
 
 
 
@@ -26,11 +27,10 @@ function Search() {
     }
   
 
-localStorage.clear();
-localStorage.setItem("score", 0);
-FinishLoading();
 
 
+
+//lottie animation for the transition between questions
 function TransitionAnimation() {
     animation.style.display = 'block';
     animation.play();
@@ -230,6 +230,7 @@ function qn2() {
     })
 }
 
+//question 3
 function qn3() {
     fetch("https://api.twitch.tv/helix/games/top?first=1", {
         method: "GET",

@@ -1,5 +1,7 @@
 let el = document.getElementById("signup");
 
+localStorage.clear();
+
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
