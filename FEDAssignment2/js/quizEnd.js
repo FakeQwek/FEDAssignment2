@@ -23,7 +23,7 @@ if (currScore > 9) {
     currScore = 9;
 }
 let jsondata = {
-    "username": "test2",
+    "username": localStorage.getItem("username"),
     "score": currScore
 }
 
@@ -72,7 +72,7 @@ fetch("https://twitchaccounts-179c.restdb.io/rest/scoreboard", {
                 let page = document.getElementById("page");
                 pageHTML = `<div class="d-flex row px-3 sm-w25-100 my-2">
                                 <div class="col-7 d-flex">
-                                    <h3>TestUser</h3>
+                                    <h3>` + data[i].username + `</h3>
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <h3>` + data[i].score + `/9</h3>
