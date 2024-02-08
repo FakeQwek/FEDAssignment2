@@ -1,19 +1,24 @@
+<!--Games channels page. No scrolling is enabled-->
 <!DOCTYPE html>
 <html lang="en" class="sm-noscroll">
+<!--Basic website information as well as link to bootstrap and stylesheet-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TwitchStats</title>
     <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
+
 <body>
+  <!--Gets and allows for loading animation-->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
   <dotlottie-player class="loading background-white" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="transparent" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
+  <!--Navigation bar for website-->
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
       <a href="./index.html" >
-        <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
+        <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2" alt="The twitch logo">
       </a>
       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -24,12 +29,10 @@
           <button type="button" class="btn-close btn-close white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+          <!--Links for the different pages-->
           <ul class="navbar-nav flex-grow-1 pe-3">
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="./games.html">Games</a>
             </li>
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./categories.html">Categories</a>
@@ -40,6 +43,7 @@
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./hangman.html">Twitch Hangman</a>
             </li>
+            <!--Search function-->
             <li class="nav-item align-center">
               <form class="form-inline row" >
                 <div class="col">
@@ -51,6 +55,7 @@
               </form>
             </li>
           </ul>
+          <!--Sign up and login buttons-->
           <ul id="username" class="navbar-nav ml-auto">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item align-center me-4" id="sign-up">
@@ -68,7 +73,10 @@
       </div>
     </div>
   </nav>
+  <!--Main page content-->
     <main class="inter-tight-bold">
+      <!--Image of XQC as well as a list of games channels on twitch. Pressing refresh streamers fetches
+      the api once more-->
         <div class="row">
             <div class="col remove">
                 <img class="img-fluid" src="./images/xqc.jpg">
@@ -85,6 +93,8 @@
             </div>
         </div>
     </main>
+
+    <!--Footer which displays contact information as well as social media icons-->
     <footer class="height-200 container-fluid bg-5c16c5 margin-top-6per padding-bottom-2per">
       <div class="d-flex justify-content-evenly flex-row flex-wrap footer-segment footer-container">
         <div class="d-flex flex-column">
@@ -114,6 +124,8 @@
         </div>
       </div>
   </footer>
+
+    <!--Javascripts that run-->
     <script src="./js/gamesAPI.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

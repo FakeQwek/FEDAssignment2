@@ -1,17 +1,19 @@
+<!--Quiz start page-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TwitchStats</title>
     <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    
 </head>
-<body>
 
+<body>
+  <!--Gets and allows for loading animation-->
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
   <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="white" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
+  <!--Navigation bar for website-->
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container-fluid">
       <a href="./index.html" >
@@ -26,6 +28,7 @@
           <button type="button" class="btn-close btn-close white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+          <!--Links for the different pages-->
           <ul class="navbar-nav flex-grow-1 pe-3">
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
@@ -39,6 +42,7 @@
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./hangman.html">Twitch Hangman</a>
             </li>
+            <!--Search function-->
             <li class="nav-item align-center">
               <form class="form-inline row" >
                 <div class="col">
@@ -50,6 +54,7 @@
               </form>
             </li>
           </ul>
+          <!--Sign up and login buttons-->
           <ul id="username" class="navbar-nav ml-auto">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item align-center me-4" id="sign-up">
@@ -67,24 +72,18 @@
       </div>
     </div>
   </nav>
-
-              
-
-    <!-- main -->
+  <!--Main page content-->
     <main class="inter-tight-bold bg-9146ff">
 
-      <!-- page with the text about the quiz -->
+      <!--Displays title description and the anchor-->
         <div class="d-flex justify-content-center align-items-center vh-100 flex-column text-center">
             <h1 class="font-100 mb-5 text-white">Welcome to the TwitchStats Quiz</h1>
             <h2 class="mb-5 text-white">Test your knowledge on your favourite streamers</h2>
-
-
-            <!-- anchor to link to the quiz-1 page -->
             <a class="btn border-0 text-white" href="./quiz-1.html">Start</a>
         </div>
       </main>
 
-    
+          <!--Footer which displays contact information as well as social media icons-->
       <footer class="height-200 container-fluid bg-5c16c5  padding-bottom-2per">
         <div class="d-flex justify-content-evenly flex-row flex-wrap footer-segment footer-container">
           <div class="d-flex flex-column">
@@ -115,7 +114,7 @@
         </div>
     </footer>
 
-
+    <!--Javascripts that run-->
     <script src="./js/loading.js"></script>
     <script src="./js/navbar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

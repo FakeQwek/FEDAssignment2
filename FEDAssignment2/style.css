@@ -1,13 +1,11 @@
 
 
-/* general css settings */
-
+/* General Css settings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 @font-face {
     font-family: "Inter-Tight";
@@ -24,8 +22,7 @@ html, body {
     overflow-x: hidden;
 }
 
-
-/* classes to set fonts */
+/* classes to set font sizes */
 .inter-tight {
     font-family: "Inter-Tight";
 }
@@ -54,7 +51,7 @@ html, body {
     font-size: 100px;
 }
 
-/* classes to set colours */
+/* Classes to set colours */
 .bg-5c16c5 {
     background-color: #5C16C5;
 }
@@ -71,8 +68,7 @@ html, body {
     color: white;
 }
 
-/* classes to set heights */
-
+/* Classes to set heights */
 .height-400 {
     height: 500px;
 }
@@ -97,9 +93,7 @@ html, body {
     height: 100vh;
 }
 
-
 /* classes to set widths */
-
 .width-25 {
     width: 30px;
 }
@@ -129,7 +123,6 @@ html, body {
     max-height: 60px;
 }
 
-
 .max-width-100p {
     max-width: 100%;
 }
@@ -146,9 +139,7 @@ html, body {
     width: 40%;
 }
 
-
-/* classes to set positions */
-
+/* Classes to set positions */
 .align-center {
     display: flex;
     align-items: center;
@@ -242,8 +233,8 @@ html, body {
 .margin-left-5per {
     margin-left: 5%;
 }
-/* design related classes */
 
+/* Design related classes */
 .display-none {
     display: none;
 }
@@ -252,14 +243,7 @@ html, body {
     background-color: #f7f9fb;
 }
 
-
-
-
-
-
-
-/* specific element classes */
-
+/* Specific element classes */
 .title {
     padding-left: 5%;
     padding-top: 5%;
@@ -272,48 +256,12 @@ html, body {
     left: 0;
     width: 100vw;
     height: 100vh;
-   
-    
-}
-
-.sm-noscroll {
-    overflow-y: hidden;
-}
-
-.circle {
-    border-radius: 50%;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-    display: none;
-  }
-
-
-footer {
-   padding-top: 3%;
-}
-
-
-
-
-/* animation classes */
-
-
-
-
-.category-text:hover, .btn:hover, button:hover{
-    background-color: lightgray !important;
-}
-
-.channel-stats:hover, .stats:hover {
-    color: lightgray;
 }
 
 .animated-twitch {
     width: 15%;
     visibility: hidden;
     padding-left: 0.5%;
-    
 }
 
 .animated-quiz {
@@ -325,6 +273,35 @@ footer {
     height: 300vh;
 }
 
+.sm-noscroll {
+    overflow-y: hidden;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+/*Removes the cancel button from the search bar*/
+input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+
+footer {
+   padding-top: 3%;
+}
+
+/* Hover classes */
+.category-text:hover, .btn:hover, button:hover{
+    background-color: lightgray !important;
+}
+
+.channel-stats:hover, .stats:hover {
+    color: lightgray;
+}
+
+/* Animation classes */
+/*Each animation plays infinitely back and forth for 2s where 
+they bob up and down*/
 .animated-icons {
     animation: bobbing 2s ease-in-out infinite alternate;
     visibility: hidden;
@@ -353,26 +330,27 @@ footer {
     100% {transform: translateY(-15%);}
 }
 
-
-
-/* RESPONSIVENESS */
-
-/* Makes search page responsive up to 320px */
+/* Responsiveness */
+/* Makes search page responsive down to 320px */
 @media only screen and (max-width: 800px) {
     .col-md-6 {
       width: 100vw !important;
       margin-right: 20%;
     }
+
     .title {
         font-size: 4vmax;
         padding-left: 8%;
     }
+
     .font-32 {
         font-size: 25px;
     }
+
     .rounded-circle {
         max-width: 70px;
     }
+
     .padding-left-15per {
         padding-left: 12%;
     }
@@ -382,67 +360,69 @@ footer {
     .font-32 {
         font-size: 25px;
     }
+
     .rounded-circle {
         max-width: 70px;
     }
+
     .padding-left-15per {
         padding-left: 12%;
     }
 }
 
-/* Makes the login page responsive up to 320px */
-
+/* Makes the login page responsive down to 320px */
 @media only screen and (max-width: 1425px) {
     .col-7 {
         position: relative;
     }
    
-
     .login-image {
         display: none;
     }
+
     .font-64 {
         font-size: 3rem;
     }
+
     .d-flex {
         display: flex;
     }
+
     .background-image {
         background-image: url("./images/xqc.jpg");
-       
         background-size: cover;
         z-index: -1;
     }
-    
-   
 }
 
 @media only screen and (max-width: 525px) {
-   
     #login-page .rounded-circle {
         max-width: 70px;
     }
+
     #login-page .padding-left-15per {
         padding-left: 12%;
     }
+
     #login-page .font-64{
       font-size: 2rem;
       padding-left: 13px;
     }
+
     #login-page .font-32{
       font-size: 20px;
     }
+
     #login-page .twitch-icon {
-        width: 50px !important;
-        
+      width: 50px !important;
     }
+
     #login-page input {
         font-size: 13px;
     }
 }
 
 @media only screen and (max-width: 400px) {
-   
     #login-page input {
         font-size: 11.5px;
     }
@@ -461,6 +441,28 @@ footer {
 
 }
 
+
+
+/* Makes the footer responsive down to 320px*/
+@media only screen and (max-width: 877px) {
+    .justify-content-evenly {
+        justify-content: start !important;
+    }
+
+    footer h2 {
+        font-size: 100%;
+    }
+
+    footer h6 {
+        font-size: 100%;
+    }
+
+    footer p {
+        font-size: 100%;
+    }
+}
+
+/* Makes the navbar responsive down to 320px */
 @media only screen and (max-width: 768px) {
     .sm-vh100-200 {
         height: 200vh;
@@ -521,31 +523,9 @@ footer {
     .sm-noscroll {
         overflow-y: scroll;
     }
-    
 }
 
-/* Makes the footer responsive */
-
-@media only screen and (max-width: 877px) {
-    .justify-content-evenly {
-        justify-content: start !important;
-    }
-
-    footer h2 {
-        font-size: 100%;
-    }
-
-    footer h6 {
-        font-size: 100%;
-    }
-
-    footer p {
-        font-size: 100%;
-    }
-}
-
-/* Makes the nav bar more responsive */
-
+/* Makes the hamburger nav bar more responsive */
 @media only screen and (max-width: 992px) {
     #sign-up {
         padding-top: 5%;
