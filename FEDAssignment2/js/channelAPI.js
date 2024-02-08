@@ -38,7 +38,7 @@ for (let i = 0; i < 100; i++) {
         .then(data => {
             console.log(data);
             let el = document.getElementById("channel-profile");
-            let html = `<img src="` + data.data[0].profile_image_url + `" class="rounded-circle max-width-200 ms-5"></img>`
+            let html = `<img src="` + data.data[0].profile_image_url + `" class="circle max-width-200"></img>`
 
             el.innerHTML = html;
 
@@ -57,8 +57,7 @@ for (let i = 0; i < 100; i++) {
             el3.innerHTML = html3;
 
             let el4 = document.getElementById("channel-description");
-            let html4 = `<h2>Description</h2>
-                         <h4>` + data.data[0].description + `</h4>`
+            let html4 = `<h4 class="px-5 py-4">` + data.data[0].description + `</h4>`
 
             el4.innerHTML = html4;
         })
@@ -77,7 +76,7 @@ for (let i = 0; i < 100; i++) {
             let gameId = data.data[0].game_id;
 
             let el = document.getElementById("channel-title");
-            let html = `<h3>` + data.data[0].title + `</h3>`
+            let html = `<h3 class="text-center">` + data.data[0].title + `</h3>`
 
             el.insertAdjacentHTML("beforeend", html);
 
@@ -110,7 +109,7 @@ for (let i = 0; i < 100; i++) {
             })
             .then(data => {
                 let el = document.getElementById("channel-game");
-                let html = `<img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded mx-3 my-3">`
+                let html = `<img src="` + data.data[0].box_art_url.replace('{width}', '285').replace('{height}', '380') + `" class="rounded ms-3 my-3">`
 
                 el.insertAdjacentHTML("afterbegin", html);
 
@@ -119,6 +118,67 @@ for (let i = 0; i < 100; i++) {
 
                 el2.innerHTML = html2;
             })
+        })
+
+        fetch("https://api.twitch.tv/helix/channels/followers?broadcaster_id=" + userId, {
+            method: "GET",
+            headers: {
+            "Client-ID": clientId,
+            "Authorization": "Bearer " + oAuth
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let followerCount = document.getElementById("follower-count");
+            let html = `<h2>` + data.total + `</h2>
+                        <h4>Follower Count</h4>`
+            
+            followerCount.innerHTML = html;
+        })
+
+        fetch("https://api.twitch.tv/helix/users?id=" + userId, {
+            method: "GET",
+            headers: {
+            "Client-ID": clientId,
+            "Authorization": "Bearer " + oAuth
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let date = Number(data.data[0].created_at.slice(0,4));
+
+            let creationYear = document.getElementById("creation-year");
+
+            let html = `<h2>` + date + `</h2>
+                        <h4>Year Created</h4>`
+
+            creationYear.innerHTML = html;
+        })
+
+        fetch("https://api.twitch.tv/helix/users?id=" + userId, {
+            method: "GET",
+            headers: {
+            "Client-ID": clientId,
+            "Authorization": "Bearer " + oAuth
+            }
+        })
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            let date = Number(data.data[0].created_at.slice(5,7));
+
+            let creationMonth = document.getElementById("creation-month");
+
+            let html = `<h2>` + months[date - 1] + `</h2>
+                        <h4>Month Created</h4>`
+
+            creationMonth.innerHTML = html;
         })
     }
 }

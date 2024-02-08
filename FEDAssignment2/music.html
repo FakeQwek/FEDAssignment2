@@ -1,23 +1,20 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="sm-noscroll">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link href="./style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     
 </head>
 <body>
   <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-  <dotlottie-player class="loading" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="white" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
+  <dotlottie-player class="loading background-white" src="https://lottie.host/e411a2fd-3359-4549-ad41-4fddc507ecfd/o7p8AT8m4x.json" background="transparent" speed="1"  direction="1" playMode="normal" loop autoplay></dotlottie-player>
   <nav class="navbar navbar-expand-lg bg-white shadow">
     <div class="container-fluid">
-      <a href="./index.html" >
-        <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
-      </a>
+      <img src="./images/twitch-logo.png" class="img-fluid width-25 ms-2">
       <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,39 +26,23 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav flex-grow-1 pe-3">
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
+              <a class="nav-link inter-tight-bold ms-4" href="#">Channels</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="./games.html">Games</a>
+              <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="./categories.html">Categories</a>
+              <a class="nav-link inter-tight-bold ms-4" href="#">Clips</a>
             </li>
-            <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="./quiz.html">Twitch Quiz</a>
-            </li>
-          
             <li class="nav-item align-center">
               <form class="form-inline row" >
                 <div class="col">
-                  <input class="form-control ms-4" type="search" placeholder="Find Channels" aria-label="Search">
+                  <input class="form-control ms-4" type="search" placeholder="Search" aria-label="Search">
                 </div>
                 <div class="col">
-                  <button class="btn ms-1 inter-tight-bold" type="button" onclick = "Search()">Search</button>
+                  <button class="btn" type="button" onclick = "Search()" >Search</button>
                 </div>
               </form>
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item align-center me-4">
-              <div class="bg-e5e5e5 height-30 rounded font-14 align-center">
-                <a class="nav-link inter-tight-bold" href="./signup.html">Sign Up</a>
-              </div>
-            </li>
-            <li class="nav-item align-center me-4">
-              <div class="bg-9146ff height-30 rounded font-14 align-center">
-                <a class="nav-link inter-tight-bold text-white" href="./login.html">Log In</a>
-              </div>
             </li>
           </ul>
         </div>
@@ -69,19 +50,23 @@
     </div>
   </nav>
 
-   
-    <main>
-      <h2 class = "title">Live Channel Results</h2>
-      <div class = "d-flex align-items-start flex-row padding-left-5per padding-right-5per justify-content-between padding-top-2per row">
-        <div id="channels-results" class="col-md-6"></div>
-        <div id="channels-results2" class="col-md-6"></div>
-      </div>
-      
-      
-          
-      
+    <main class="inter-tight-bold">
+        <div class="row">
+            <div class="col remove">
+                <img class="img-fluid" src="./images/twitch-music.jpg  ">
+            </div>
+            <div class="col">
+                <div class="container-fluid my-4">
+                    <h1 class="font-100 text-center">Music Streamers</h1>
+                </div>
+                <div id="channels" class="d-flex row mx-4">
+                </div>
+                <div class="d-flex justify-content-center my-5">
+                  <button id="reload" class="btn btn-lg">Refresh Streamers</button>
+                </div>
+            </div>
+        </div>
     </main>
-    
     <footer class="height-200 container-fluid bg-5c16c5 margin-top-6per padding-bottom-2per">
       <div class="d-flex justify-content-evenly flex-row flex-wrap footer-segment footer-container">
         <div class="d-flex flex-column">
@@ -111,10 +96,7 @@
         </div>
       </div>
   </footer>
-
-
-
-    <script src="./js/search.js"></script>
+    <script src="./js/musicAPI.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>

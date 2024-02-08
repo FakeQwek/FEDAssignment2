@@ -31,7 +31,10 @@
               <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./games.html">Games</a>
+            </li>
+            <li class="nav-item align-center">
+              <a class="nav-link inter-tight-bold ms-4" href="./categories.html">Categories</a>
             </li>
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./quiz.html">Twitch Quiz</a>
@@ -64,55 +67,67 @@
       </div>
     </div>
   </nav>
+
     <!-- main-->
-    <main>
-        <div class="d-flex flex-row align-items-center height-300">
-          <div id="channel-profile">
-            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/04b097ac-9a71-409e-b30e-570175b39caf-profile_image-300x300.png" class="rounded-circle max-width-200 ms-5">
+    <main class="inter-tight-bold">
+        <div class="d-flex flex-row align-items-center height-300 row mt-4">
+          <div id="channel-profile" class="col-2 d-flex justify-content-center w-100 bg-9146ff py-3">
+            <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/04b097ac-9a71-409e-b30e-570175b39caf-profile_image-300x300.png" class="circle max-width-200 ms-5">
           </div>
-          <div id="channel-title" class="ms-4">
+          <div id="channel-title" class="col d-flex align-items-center w-100 flex-column py-2">
             <div id="display-name" class="d-flex flex-row align-items-center">
               <h1>loltyler1</h1>
               <img src="./images/twitch-verified.png" class="max-width-20 ms-3">
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="d-flex mt-4 col-7 flex-column">
+        <div>
+          <div class="d-flex mt-5 flex-column">
             <h1 class="d-flex ms-5 mb-4">Stats</h1>
-            <div class="d-flex">
-              <div class="d-flex ms-5 bg-e5e5e5 flex-row rounded align-items-center shadow">
-                <div id="viewer-count" class="px-4 py-2">
+            <div class="d-flex row justify-content-center px-5 sm-w100 gap-3">
+              <div class="d-flex bg-e5e5e5 flex-row rounded align-items-center justify-content-center shadow col">
+                <div id="viewer-count" class="px-4 py-2 text-center">
                 </div>
               </div>
-              <div class="d-flex ms-5 bg-e5e5e5 flex-row rounded align-items-center shadow">
-                <div id="channel-age" class="px-4 py-2">
+              <div class="d-flex bg-e5e5e5 flex-row rounded align-items-center justify-content-center shadow col">
+                <div id="channel-age" class="px-4 py-2 text-center">
                 </div>
               </div>
-              <div class="d-flex ms-5 bg-e5e5e5 flex-row rounded align-items-center shadow">
-                <div class="px-4 py-2">
-                  <h2>24659</h2>
-                  <h4>Viewer Count</h4>
+              <div class="d-flex bg-e5e5e5 flex-row rounded align-items-center justify-content-center shadow col">
+                <div id="follower-count" class="px-4 py-2 text-center">
+                </div>
+              </div>
+              <div class="d-flex bg-e5e5e5 flex-row rounded align-items-center justify-content-center shadow col">
+                <div id="creation-year" class="px-4 py-2 text-center">
+                </div>
+              </div>
+              <div class="d-flex bg-e5e5e5 flex-row rounded align-items-center justify-content-center shadow col">
+                <div id="creation-month" class="px-4 py-2 text-center">
                 </div>
               </div>
             </div>
-            <div class="d-flex ms-5 bg-e5e5e5 flex-row rounded align-items-center shadow mt-5">
-              <div id="channel-description" class="px-4 py-2">
-              </div>
-            </div>
-            <h1 class="d-flex ms-5 mt-5">Clips</h1>
           </div>
-          <div class="col d-flex mt-4 flex-column">
-            <h1 class="me-5 mb-4">Current Stream</h1>
-            <div class="d-flex flex-row bg-e5e5e5 me-5 justify-content-center rounded shadow">
-              <div id="channel-game">
-              </div>
-              <div class="d-flex flex-column align-items-center container-fluid">
-                <div id="game-name">
-                </div>
 
-                <div id="stream-duration" class="mt-3 d-flex flex-column align-items-center">
-                  <h2>Duration</h2>
+
+          <div class="row">
+            <div class="col-7 my-5 d-flex flex-column justify-content-center">
+              <h1 class="mx-5 mb-4">Description</h1>
+              <div id="channel-description" class="d-flex flex-row bg-e5e5e5 mx-5 rounded shadow sm-w100 h-100">
+
+              </div>
+            </div>
+            <div class="col d-flex mt-4 flex-column mt-5">
+              <h1 class="mx-5 mb-4">Current Stream</h1>
+              <div class="d-flex bg-e5e5e5 mx-5 justify-content-center rounded shadow row">
+                <div id="channel-game" class="col">
+                </div>
+                <div class="d-flex flex-column align-items-center container-fluid col">
+                  <div id="game-name">
+                  </div>
+  
+                  <div id="stream-duration" class="mt-3 d-flex flex-column align-items-center">
+                    <h2>Duration</h2>
+                  </div>
                 </div>
               </div>
             </div>

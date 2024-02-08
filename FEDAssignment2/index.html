@@ -33,7 +33,10 @@
               <a class="nav-link inter-tight-bold ms-4" href="./index.html">Home</a>
             </li>
             <li class="nav-item align-center">
-              <a class="nav-link inter-tight-bold ms-4" href="#">Games</a>
+              <a class="nav-link inter-tight-bold ms-4" href="./games.html">Games</a>
+            </li>
+            <li class="nav-item align-center">
+              <a class="nav-link inter-tight-bold ms-4" href="./categories.html">Categories</a>
             </li>
             <li class="nav-item align-center">
               <a class="nav-link inter-tight-bold ms-4" href="./quiz.html">Twitch Quiz</a>
@@ -68,110 +71,87 @@
   </nav>
 
     <main>
-      <div class="container-fluid bg-5c16c5 height-400 align-center shadow">
-        <div class="ms-5 inter-tight-bold text-white d-flex flex-column">
-          <div class="justify-end">
-            <h1 class="">Welcome to<br><span class="font-100">TwitchStats</span></h1>
-            <dotlottie-player class="ms-4 animated-twitch"src="https://lottie.host/e6bb34f6-be69-43d6-9968-fd7fda0f11aa/9Ljq8FymTy.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
-            
+      <div class="container-fluid bg-5c16c5 height-400 align-center shadow d-flex">
+        <div class="d-flex inter-tight-bold text-white flex-column">
+          <div class="d-flex align-items-end sm-margin-s48">
+            <h1>Welcome to<br><span class="font-100">TwitchStats</span></h1>
+            <dotlottie-player class="ms-4 animated-twitch remove"src="https://lottie.host/e6bb34f6-be69-43d6-9968-fd7fda0f11aa/9Ljq8FymTy.json" background="transparent" speed="1"  loop autoplay></dotlottie-player>
           </div>
-          <div class="d-flex flex-row justify-content-between">
-            <div>
+          <div class="d-flex flex-row justify-content-between sm-margin-s48">
+            <div class="remove">
               <h2 id="viewer-count-100" class="mt-5">0</h2>
               <p>Viewers Watching Top 100</p>
             </div>
-            <div>
+            <div class="remove">
               <h2 id="no1-follower-count" class="mt-5">0</h2>
               <p class="ms-5">#1 Stream Follower Count</p>
             </div>
-            <div>
+            <div class="remove">
               <h2 id="top-category" class="mt-5">Category</h2>
               <p class="ms-5">Top Category</p>
             </div>
-          </div>
-          
+          </div> 
         </div>
-        
       </div>
 
       <section>
-        <div class="row mt-5">
-          <div class="col justify-center ms-5 bg-5c16c5 rounded align-center max-height-60">
-            <div class="container-fluid">
-              <h1 class="text-white">Games</h1>
-            </div>
-            <div class="col">
-              <img src="./images/twitch-controller.png" class="height-100 animated-icons">
-            </div>
-          </div>
-          <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
-            <div class="container-fluid">
-              <h1 class="text-white">IRL</h1>
-            </div>
-            <div class="col">
-              <img src="./images/twitch-mic.png" class="height-100 animated-icons2">
-            </div>
-          </div>
-          <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
-            <div class="container-fluid">
-              <h1 class="text-white">Music</h1>
-            </div>
-            <div class="col">
-              <img src="./images/twtich-headset.png" class="height-100 animated-icons3">
-            </div>
-          </div>
-          <div class="col justify-center ms-2 bg-5c16c5 rounded align-center max-height-60">
-            <div class="container-fluid">
-              <h1 class="text-white">Esports</h1>
-            </div>
-            <div class="col">
-              <img src="./images/twtich-trophy.png" class="height-100 animated-icons2">
-            </div>
-          </div>
-          <div class="col justify-center ms-2 me-5 bg-5c16c5 rounded align-center max-height-60 ">
-            <div class="container-fluid">
-              <h1 class="text-white">Art</h1>
-            </div>
-            <div class="col">
-              <img src="./images/twitch-art.png" class="height-100 animated-icons3">
-            </div>
-          </div>
+        <div id="carousel1" class="row mt-5">
+          
+        </div>
           
 
-        <div class="row mt-5 inter-tight-bold">
-          <div id="live-channels" class="col ms-5">
-            <h2>Top Live Channels</h2>
+        <div class="row mt-5 inter-tight-bold px-2">
+          <h2 class="font-64 text-center mx-3 padding-bottom-2per">Top Live Channels</h2>
+          <div id="live-channels" class="col sm-margin-s48">
           </div>
-          <div id="live-channels2" class="col ms-5">
-            <h2>Top Live Channels</h2>
+          <div id="live-channels2" class="col sm-margin-s48">
           </div>
-          </div>
-        </div>
-
-
-        <div class="mt-5 inter-tight-bold">
-          <h2 class="ms-5">Top Categories</h2>
-          <div id="" class="mx-5 mt-5 d-flex flex-row justify-content-between">
           </div>
         </div>
 
-        <div class="carousel slide" data-bs-ride="carousel">
-          <div id="top-games" class="carousel-inner">
-            
-          </div>
-        </div>
 
-        <div class="mt-5 inter-tight-bold">
-          <h2 class="ms-5">Recent Popular Clips</h2>
-          <div id="top-clips" class="mx-5 mt-5 d-flex flex-row justify-content-between">
+        <div class="mt-5 inter-tight-bold d-flex align-items-center flex-column">
+          <h2 class="font-64 text-center mx-3 padding-bottom-2per">Top Categories</h2>
+          <div id="" class="mt-5 d-flex flex-row justify-content-between">
+          </div>
+          <div class="carousel slide" data-bs-ride="carousel">
+            <div id="top-games" class="carousel-inner">
+              
+            </div>
           </div>
         </div>
       </section>
     </main>
 
 
-    <footer>
-      <div class="height-400"></div>
+    <footer class="height-200 container-fluid bg-5c16c5 margin-top-6per padding-bottom-2per">
+        <div class="d-flex justify-content-evenly flex-row flex-wrap footer-segment footer-container">
+          <div class="d-flex flex-column">
+            <h2 class="text-white padding-bottom-5per padding-top-2per">Contact Us</h2>
+            <div>
+              <h6 class="text-white">twitchstatssupport@gmail.com</h5>
+              <h6 class="text-white padding-bottom-5per">+65 9899 2002</h5>
+              <p class="text-white">We will get back to you within 3 business days<p>
+            </div>
+          </div>
+          <div class="d-flex flex-column">
+            <h2 class="text-white padding-bottom-5per padding-top-2per footer-segment">Follow Us</h2>
+            <div class="d-flex flex-row ">
+              <a href="https://www.youtube.com/">
+                <img src="./images/youtube-icon.png" class="img-fluid width-40per">
+              </a>
+              <a href="https://www.linkedin.com/mynetwork/">
+                <img src="./images/linkedin-icon.png" class="img-fluid width-40per">
+              </a>
+              <a href="https://www.instagram.com/">
+                <img src="./images/instagram-icon.png" class="img-fluid width-40per">
+              </a>
+              <a href="https://www.facebook.com/">
+                <img src="./images/facebook-icon.png" class="img-fluid width-40per ">
+              </a>
+            </div>
+          </div>
+        </div>
     </footer>
 
 
