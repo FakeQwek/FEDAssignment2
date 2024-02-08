@@ -4,13 +4,24 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["Art", "Software and Game Development", "Food & Drink", "Makers & Crafting", "Beauty & Body Art"]
 let userIds = []
 
+
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
         loader.remove();
         
-       }, 1250)
+       }, 4000)
     }
+
+FinishLoading();
 
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",

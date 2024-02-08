@@ -4,6 +4,15 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["League of Legends", "VALORANT", "Fortnite", "Apex Legends", "Counter Strike", "Call of Duty: Warzone", "World of Warcraft", "Dota 2"]
 let userIds = []
 
+
+function Search() {
+    const searchQuery = document.querySelector(".form-control").value;
+    localStorage.setItem("Search", searchQuery);
+    window.location.href="./search.html";
+    return false;
+  }
+  
+
 function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
