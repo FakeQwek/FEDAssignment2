@@ -1,5 +1,7 @@
 let el = document.getElementById("signup");
 
+let wrong = document.getElementById("wrong");
+
 localStorage.clear();
 
 function FinishLoading() {
@@ -33,6 +35,8 @@ function submit() {
     .then(response => {
         return response.json();
     })
+    wrong.classList.remove("text-white");
+    wrong.classList.add("text-success");
 }
 
 

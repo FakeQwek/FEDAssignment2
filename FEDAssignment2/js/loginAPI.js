@@ -21,6 +21,7 @@ function FinishLoading() {
        }, 500)
 }
   
+let wrong = document.getElementById("wrong");
 
 
 FinishLoading();
@@ -46,6 +47,11 @@ function submit() {
             if (data[i].username == username && data[i].password == password) {
                 localStorage.setItem("username", username)
                 location.href = "./index.html"
+                break;
+            }
+            else {
+                wrong.classList.remove("text-white");
+                wrong.classList.add("text-danger");
             }
         }
     })

@@ -60,7 +60,7 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
 
     for (let i = 0; i < string.length; i++) {
         if (string[i]) {
-            let html = `<div><h1 class="text-white border-bottom border-black ` + string[i].toUpperCase() + `">` + string[i].toUpperCase() + `</h1></div>`
+            let html = `<div class="col"><h1 class="text-white border-bottom border-black d-inline-block ` + string[i].toUpperCase() + `">` + string[i].toUpperCase() + `</h1></div>`
             word.insertAdjacentHTML("beforeend", html);
         }
     }
