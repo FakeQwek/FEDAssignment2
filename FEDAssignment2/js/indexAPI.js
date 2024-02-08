@@ -16,15 +16,6 @@ let getUsers = "https://api.twitch.tv/helix/users?id=";
 let getGames = "https://api.twitch.tv/helix/games/top?first=12";
 let getChannel = "https://api.twitch.tv/helix/channels?id=";
 
-//clears local storage on page load 
-localStorage.clear(); 
-
-
-
-
-
-
-
 //removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
     setTimeout(function(){

@@ -1,5 +1,6 @@
 let el = document.getElementById("login");
 
+localStorage.clear();
 
 //gets the inputs for username and password and checks if the data is in the database
 
@@ -35,6 +36,7 @@ function submit() {
     .then(data => {
         for (let i = 0; i < data.length; i++) {
             if (data[i].username == username && data[i].password == password) {
+                localStorage.setItem("username", username)
                 location.href = "./index.html"
             }
         }
