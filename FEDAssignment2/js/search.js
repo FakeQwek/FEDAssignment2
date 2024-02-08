@@ -3,7 +3,7 @@ const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
 let apiCall = "https://api.twitch.tv/helix/users?id="
 
-
+//gets the value from the search container and adds it to local storage
 function Search() {
   const searchQuery = document.querySelector(".form-control").value;
   localStorage.setItem("Search", searchQuery);
@@ -11,7 +11,7 @@ function Search() {
   return false;
 }
 
-
+//removes the lottie animation after the data from the API is done being called
 function FinishLoading() {
   setTimeout(function(){
       const loader = document.querySelector(".loading");
@@ -23,7 +23,7 @@ function FinishLoading() {
 
 
 
-
+//fetching the top 100 current live streams
 fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getItem("Search") +"&first=100" +"&live_only=true", {
     method: "GET",
     headers: {
@@ -35,7 +35,6 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     return response.json();
 })
 .then(json => {
-   console.log(json.data);
    //Prints whole file : console.log(json.data);
    //Prints first channel's broadcasters language : console.log(json.data[0].broadcaster_language);
    let index = 0;
@@ -60,7 +59,7 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     
      function Tag(){
       try {
-        /*console.log(channel.tags.length)*/
+
         if (channel.tags.length > 1) {
             tag1 = channel.tags[0]
             tag2 = channel.tags[1]
@@ -106,7 +105,6 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
                 }
      index++;
    })
-   console.log(apiCall);
    
    fetch(apiCall, {
     method: "GET",
@@ -119,7 +117,6 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     return response.json();
    })
    .then(json => {
-    console.log(json.data);
     const channelButton = document.getElementsByClassName("user-id");
    
 
@@ -139,7 +136,6 @@ fetch("https://api.twitch.tv/helix/search/channels?query=" + localStorage.getIte
     }
   })
   
-  console.log(userIds);
     
  })
 

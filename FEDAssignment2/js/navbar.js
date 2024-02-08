@@ -1,3 +1,4 @@
+//if username in localstorage is null show sign up and log in buttons else show welcome message and sign out button
 let username = document.getElementById("username");
 if (localStorage.getItem("username") == null) {
     username.innerHTML = `<li class="nav-item align-center me-4">

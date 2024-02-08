@@ -1,11 +1,14 @@
+//setting the oAuth key and clientID
 const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
+
+//setting the lists that will be used
 let getUsers = "https://api.twitch.tv/helix/users?id=";
 let gameList = ["Teamfight Tactics", "Legaue of Legends", "Palworld", "VALORANT", "Counter-Strike", "Fortnite", "Grand Theft Auto V", "Apex Legends"]
 let userIds = []
 
 
-
+//gets the value from the search container and adds it to local storage
 function Search() {
     const searchQuery = document.querySelector(".form-control").value;
     localStorage.setItem("Search", searchQuery);
@@ -13,7 +16,7 @@ function Search() {
     return false;
   }
   
-  
+  //removes the lottie animation after the data from the API is done being called
   function FinishLoading() {
     setTimeout(function(){
         const loader = document.querySelector(".loading");
@@ -23,7 +26,7 @@ function Search() {
     }
   
 
-
+//fetching the top 100 current live streams
 fetch("https://api.twitch.tv/helix/streams?first=100", {
     method: "GET",
     headers: {
@@ -35,6 +38,8 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
     return response.json();
 })
 .then(data => {
+
+    //gets a maximum of 4 channels streaming these categories
     let count = 0
     for (let i = 0; i < data.data.length; i++) {
         if (gameList.includes(data.data[i].game_name) === true && count < 4) {
@@ -57,6 +62,8 @@ fetch("https://api.twitch.tv/helix/streams?first=100", {
             return response.json();
         })
         .then(data2 => {
+
+            //displays the information of the channels
             for (let i = 0; i < userIds.length; i++) {
                 let el = document.getElementById("channels");
                 let html = `<button type="button" class="container-fluid btn btn-outline-white user-id">
