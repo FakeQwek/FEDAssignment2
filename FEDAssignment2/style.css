@@ -299,16 +299,14 @@ footer {
 /* animation classes */
 
 
-.category-text:hover {
-    background-color: lightgray;
-}
 
-.stats:hover {
-    color: lightgray;
-}
 
-button:hover {
+.category-text:hover, .btn:hover, button:hover{
     background-color: lightgray !important;
+}
+
+.channel-stats:hover, .stats:hover {
+    color: lightgray;
 }
 
 .animated-twitch {
@@ -546,6 +544,21 @@ button:hover {
     }
 }
 
+/* Makes the nav bar more responsive */
+
+@media only screen and (max-width: 992px) {
+    #sign-up {
+        padding-top: 5%;
+        padding-bottom: 4%;
+        padding-left: 7%;
+    }
+    #log-in {
+        padding-left: 7%;
+    }
+    .offcanvas-title {
+        padding-left: 6%;
+    }
+}
 
 
 

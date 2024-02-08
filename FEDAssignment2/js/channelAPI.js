@@ -51,7 +51,7 @@ for (let i = 0; i < 100; i++) {
             const age = Math.round(Math.abs((Date.now() - Date.parse(data.data[0].created_at)) / (24 * 60 * 60 * 1000)));
 
             let el3 = document.getElementById("channel-age");
-            let html3 = `<h2>` + age + ` days</h2>
+            let html3 = `<h2 class="channel-stats">` + age + ` days</h2>
                          <h4>Channel Age</h4>`
 
             el3.innerHTML = html3;
@@ -81,7 +81,7 @@ for (let i = 0; i < 100; i++) {
             el.insertAdjacentHTML("beforeend", html);
 
             let el2 = document.getElementById("viewer-count");
-            let html2 = `<h2>` + data.data[0].viewer_count + `</h2>
+            let html2 = `<h2 class="channel-stats">` + data.data[0].viewer_count + `</h2>
                          <h4>Viewer Count</h4>`
 
             el2.innerHTML = html2;
@@ -92,7 +92,7 @@ for (let i = 0; i < 100; i++) {
 
 
             let el3 = document.getElementById("stream-duration");
-            let html3 = `<h2>` + hours + `h</h2>
+            let html3 = `<h2 class="channel-stats">` + hours + `h</h2>
                          <h2>Duration<h2>`
 
             el3.innerHTML = html3;
@@ -132,7 +132,7 @@ for (let i = 0; i < 100; i++) {
         })
         .then(data => {
             let followerCount = document.getElementById("follower-count");
-            let html = `<h2>` + data.total + `</h2>
+            let html = `<h2 class="channel-stats">` + data.total + `</h2>
                         <h4>Follower Count</h4>`
             
             followerCount.innerHTML = html;
@@ -153,7 +153,7 @@ for (let i = 0; i < 100; i++) {
 
             let creationYear = document.getElementById("creation-year");
 
-            let html = `<h2>` + date + `</h2>
+            let html = `<h2 class="channel-stats">` + date + `</h2>
                         <h4>Year Created</h4>`
 
             creationYear.innerHTML = html;
@@ -175,7 +175,7 @@ for (let i = 0; i < 100; i++) {
 
             let creationMonth = document.getElementById("creation-month");
 
-            let html = `<h2>` + months[date - 1] + `</h2>
+            let html = `<h2 class="channel-stats">` + months[date - 1] + `</h2>
                         <h4>Month Created</h4>`
 
             creationMonth.innerHTML = html;
