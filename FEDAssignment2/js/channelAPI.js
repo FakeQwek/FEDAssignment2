@@ -1,5 +1,5 @@
 //setting the oAuth key and clientID
-const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt";
+const oAuth = "56lolwv3ukdyv1nxds5j9fip1h1qez";
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7";
 
 //gets the value from the search container and adds it to local storage

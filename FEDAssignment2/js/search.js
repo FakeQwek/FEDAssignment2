@@ -1,5 +1,5 @@
 const userIds = [];
-const oAuth = "6vsaryozvkalsvqacwmc1l4f5ayxdt"
+const oAuth = "56lolwv3ukdyv1nxds5j9fip1h1qez"
 const clientId = "eassc2nhlz71317bkeqe3ftj9xugl7"
 let apiCall = "https://api.twitch.tv/helix/users?id="
 
